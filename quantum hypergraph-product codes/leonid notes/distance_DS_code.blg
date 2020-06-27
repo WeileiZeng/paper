@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: distance_DS_code.aux
+The style file: apsrev4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: distance_DS_codeNotes.bib
+Database file #2: lpp.bib
+Database file #3: qc_all.bib
+Database file #4: more_qc.bib
+Database file #5: linalg.bib
+Database file #6: WeileiBibFile.bib
+control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{apsrev41Control}, control.key{N/A}, control.author{00}, control.editor{1}, control.title{0}, control.pages{1}, control.year{0}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Warning--dotless (dependency: not initials) set 1
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (0) dotless jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (0) allowed
+Control: page (1) range
+Control: year (0) verbatim
+Control: production of eprint (0) enabled
+You've used 3 entries,
+            5847 wiz_defined-function locations,
+            1621 strings with 14960 characters,
+and the built_in function-call counts, 1853 in all, are:
+= -- 79
+> -- 27
+< -- 40
++ -- 12
+- -- 22
+* -- 250
+:= -- 167
+add.period$ -- 2
+call.type$ -- 3
+change.case$ -- 5
+chr.to.int$ -- 13
+cite$ -- 3
+duplicate$ -- 220
+empty$ -- 87
+format.name$ -- 5
+if$ -- 295
+int.to.chr$ -- 1
+int.to.str$ -- 11
+missing$ -- 39
+newline$ -- 55
+num.names$ -- 3
+pop$ -- 102
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 68
+stack$ -- 0
+substring$ -- 43
+swap$ -- 184
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 10
+type$ -- 24
+warning$ -- 2
+while$ -- 14
+width$ -- 0
+write$ -- 61
+(There were 2 warnings)

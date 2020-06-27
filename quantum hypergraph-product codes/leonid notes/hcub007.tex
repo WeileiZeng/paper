@@ -1,0 +1,757 @@
+\def\rank{\mathop{\rm rank}}
+\def\wgt{\mathop{\rm wgt}}
+\def\lc{\mathop{\rm lc}}
+\documentclass[aps,prb,12pt,tightenlines,%
+notitlepage,longbibliography]{revtex4-1}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+%\advance\textheight by -3.2in
+\begin{document}
+\title{Higher-dimensional hypergraph-product codes} \author{LPP}
+\begin{abstract}
+  A higher-dimensional version of the quantum hypergraph-product
+  ansatz is described.  Most important feature are the sharp lower and
+  upper bounds for the minimum distance.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+The construction is useful for (a) analyzing repeated measurement in a
+stabilizer code in the problem of fault-tolerant (FT) quantum error
+correction (e.g., surface
+code\cite{Dennis-Kitaev-Landahl-Preskill-2002}, or more general LDPC
+code\cite{Kovalev-Pryadko-FT-2013}, (b) related problem of single-shot
+error correction\cite{Campbell-2018}, and (c) analysis and
+generalization of transformations between QECCs, like the quantum code
+enlargement trick by Hastings [ref?].
+
+Origin: (a) Higher-dimensional toric codes and (b) Hypergraph-product
+codes\cite{Tillich-Zemor-2009}.  Present construction generalizes
+both. 
+
+\section{Construction overview}
+
+I  want to generalize the QHP construction\cite{Tillich-Zemor-2009} to
+produce longer chain complexes from two, three, etc.\ arbitrary size
+binary matrices.  Here are some examples of intended construction.
+\begin{itemize}
+\item Original QHP construction can be interpreted as a length-two
+  chain complex $ {\cal K}(A_1,A_2)$:
+  $\{0\}\leftarrow C_0\stackrel{A_1}\leftarrow C_1\stackrel{A_2}\leftarrow
+  C_2\leftarrow \{0\}$ with boundary operators such that $A_1A_2=0$
+  (below, the indices above and to the left of the double lines label
+  the corresponding sectors),
+  \begin{equation}
+A_1=\left(
+  \begin{array}[c]{c||c|c}
+& x & y\\ \hline\hline 
+\cdot & H_1\otimes E & E\otimes H_2
+  \end{array}
+\right), \quad A_2=
+\left(
+  \begin{array}[c]{c||c}
+   &  xy \\ \hline\hline 
+x&    E\otimes H_2\\
+y&    H_1\otimes E
+  \end{array}
+\right).\label{eq:two-chain-complex-QHP}
+\end{equation}
+Here $H_i$, $i\in \{1,2\}$ are binary matrices and $E$ denotes
+identity matrices of the sizes needed to make the block rows and block
+columns of matching sizes.
+\item The following three-chain complex ${\cal K}(B_1,B_2,B_3)$
+  $\{0\}\leftarrow C_0\stackrel{B_1}\leftarrow C_1\stackrel{B_2}\leftarrow
+  C_2\stackrel{B_3}\leftarrow C_3$ with boundary operators
+  $B_1B_2=0$, $B_2B_3=0$ gives a generalization of the 3D toric codes'
+  construction:
+  \begin{eqnarray*}
+    B_1&=&\left(\cdot \| H_1\otimes E\otimes E|E\otimes H_2\otimes E|E\otimes
+           E\otimes H_3\right)=
+           \left(A_1\otimes E|E\otimes H_3\right),\\
+    B_2&=&\left(
+           \begin{array}[c]{c||c|c|c}
+             & xy & xz & yz \\ \hline\hline 
+             x& 
+                E\otimes H_2\otimes E  & E\otimes E\otimes H_3 &  \\ \hline 
+             y&   H_1\otimes E\otimes E& & E\otimes E\otimes H_3 \\  \hline 
+             z&  &  H_1\otimes E\otimes E& E\otimes H_2\otimes E
+           \end{array}\right)
+                                           =\left(
+                                           \begin{array}[c]{c|c}
+                                             A_2\otimes E & E\otimes H_3\\
+                                             \hline     
+                                                          &  A_1\otimes E
+                                           \end{array}
+                                                            \right)
+                                                            ,\\
+    B_3&=&\left(
+           \begin{array}[c]{c||c}
+             &     xyz \\ \hline\hline 
+             xy &    E\otimes E\otimes H_3   \\ \hline 
+             xz &   E\otimes H_2\otimes E  \\  \hline 
+             yz &    H_1\otimes E\otimes E
+           \end{array}\right)=\left(
+                  \begin{array}[c]{c}
+                    E\otimes H_3   \\ \hline 
+                    A_2\otimes E
+                  \end{array}
+    \right).
+  \end{eqnarray*}
+\end{itemize}
+The simple rule is that the matrix $H_1$, $H_2$, or $H_3$ is placed at
+the position whose column label differs from the row label by $x$,
+$y$, or $z$, respectively.  The construction has an obvious
+generalization to higher dimensions.  In the following, it is more
+convenient to use the following recursive definition:
+
+\begin{definition}[Dimensional extension of a chain complex]
+\label{def:dim-ext} Given an
+  $(m-1)$-chain complex $\mathcal{A}\equiv\mathcal{K}(A_1,\ldots,A_{m-1})$:
+  $\{0\}\leftarrow C_0\stackrel{A_1}\leftarrow C_1\stackrel{A_2}\leftarrow C_2\ldots
+  \stackrel{A_{m-1}}\leftarrow C_{m-1}\stackrel{0_{n_{m-1}\times 0}}\leftarrow \{0\}$ with boundary operators
+  $A_j$, $j=1,\ldots,m-1$, and an $r\times c$ binary matrix $P$, the extended
+  $m$-chain complex $\mathcal{B}\equiv\mathcal{K}(B_1,\ldots ,B_m)$ is
+  defined by the boundary operators 
+  \begin{eqnarray}
+    \label{eq:B1}
+    B_1&=&(A_1\otimes E_{r}|E_{n_0}\otimes P),\quad 
+           B_2=\left(
+           \begin{array}[c]{c|c}
+             A_2\otimes E_r&E_{n_1}\otimes P\\ \hline
+                           & A_1\otimes E_c
+           \end{array}\right), \ldots\\ 
+    \label{eq:Bj}
+    B_j&=&\left(
+           \begin{array}[c]{c|c}
+             A_j\otimes E_r&E_{n_{j-1}}\otimes P\\ \hline
+                           & A_{j-1}\otimes E_c
+           \end{array}\right), \quad \ldots\\
+    B_{m-1}&=&\left(
+               \begin{array}[c]{c|c}
+                 A_{m-1}\otimes E_r&E_{n_{m-2}}\otimes P\\ \hline
+                                   & A_{m-2}\otimes E_c
+               \end{array}\right),\\ \label{eq:Blast}
+    B_m&=&\left(
+           \begin{array}[c]{c}
+             E_{n_{m-1}}\otimes P\\  \hline        A_{m-1}\otimes E_c
+           \end{array}\right).
+  \end{eqnarray}
+  Here $E_r\equiv E(r)$ denotes the $r\times r$ identity matrix, and
+  the original linear spaces $C_i$, $i\in\{0,\ldots,m-1\}$, have
+  dimensions $n_i$ (so that $A_i$ is an $n_{i-1}\times n_i$ binary
+  matrix), with the additional convention $n_{j}=0$ for $j<0$ and
+  $j\ge m$.  The dimension of thus defined $j$-th level extended
+  linear space $\mathcal{C}_j'$ is $n_j'=n_j r+n_{j-1} c$,
+  $j\in\{0,\ldots,m\}$.
+\end{definition}
+The constructed matrices trivially satisfy the correct orthogonality
+conditions.  The original non-recursive definitions can be recovered
+by starting with the two-chain complex
+(\ref{eq:two-chain-complex-QHP}) and extending it sequentially with
+the help of matrices $H_3$, $H_4$, etc.
+
+Let us assume that the rank of the $j$-th homology group
+$\mathcal{H}_j\equiv \mathcal{H}_j(\mathcal{A})$ is
+$k_j=\rank(\mathcal{H}_j)$, and the corresponding \emph{distance}, the
+minimum weight of a homologically non-trivial cycle in $\mathcal{H}_j$
+is $d_j\ge1$, $1\le j<m$.  Here we use the convention that
+$d_j=\infty$ if $k_j=0$.  The distance $d_j$ can be also expressed as
+the (left or $z$) distance of a quantum CSS code with generators
+$G_x=A_j$ and $G_z=A_{j+1}^T$, denoted as
+$\mathcal{Q}(A_j,A_{j+1}^T)$, that is,
+$$d_j(\mathcal{A})\equiv d_j(A_j,A_{j+1}^T) =\min_{\mathbf{e}\in\mathcal{C}_{A_j}^\perp\setminus\mathcal{C}_{A_{j+1}^T}}\wgt
+\mathbf{e}.$$ 
+
+The parameters of the CSS code
+$\mathcal{Q}(A_j,A_{j+1}^T)$ are thus
+$[[n_j,k_j,\min(d_j,\tilde{d}_{j})]]$, where 
+ the distances in the corresponding co-chain
+complex generated by transposed matrices $A_j^T$, 
+$$
+\tilde{\mathcal{A}}\equiv \{0\}\leftarrow
+\mathcal{C}_{m-1}\stackrel{A_{m-1}^T}\leftarrow \ldots
+\stackrel{A_{1}^T}\leftarrow \mathcal{C}_0\leftarrow \{0\}, 
+$$
+are denoted with the tilde, $\tilde{d}_j\equiv d(A_{j+1}^T,A_j)$.
+
+In the special cases $j=0$ (which formally corresponds to a zero-row
+matrix $A_0$) it will be convenient to use $d_0=1$, and with $j=m-1$
+(which formally corresponds to a zero-column matrix
+$A_m=0_{n_{m-1}\times 0}$), use the distance $d_{m-1}$ of a binary code
+$\mathcal{C}_{A_{m-1}}^\perp$ with the parity check matrix $A_{m-1}$
+with the parameters $[n_{m-1},n_{m-1}-\rank A_{m-1},d_m]$.
+
+
+Main result of this work are the exact parameters of the
+dimensionally-extended chain complex $\mathcal{B}$, expressed in terms
+of those of the original chain complex $\mathcal{A}$ and the
+parameters of the two binary codes with parity check matrices $P$ and
+$P^T$, respectively: $\mathcal{C}_P^\perp=[c,\kappa,\delta]$ and
+$\mathcal{C}_{P^T}^\perp=[r,\tilde{\kappa},\tilde{\delta}]$.  Here $P$
+is an $r\times c$ binary matrix with $\rank P=u$, so that $\kappa=c-u$
+and $\tilde{\kappa}=r-u$; and the distances $\delta\ge1$,
+$\tilde{\delta}\ge1$.  We use the convention that $\delta=\infty $ if
+$\kappa=0$, and $\tilde{\delta}=\infty$ if $\tilde{\kappa}=0$.   
+
+With these definitions, the parameters of the dimensionally-extended
+$m$-chain complex $\mathcal{B}$ (see Definition \ref{def:dim-ext}) are
+given by the following
+\begin{theorem}
+  \label{th:results}
+  The dimension of the space $\mathcal{C}_j'$ is
+  \framebox{$n_j'=n_j r+n_{j-1}c$,} the rank of the $j$\,th homology
+  group $\mathcal{H}_j(\mathcal{B})$ is
+  \framebox{$k_j'=k_j\tilde{\kappa}+ k_{j-1}\kappa$,} with the minimum
+  distance [weight of the smallest homologically non-trivial cycle in
+  $\mathcal{H}_j(\mathcal{B})]$\ \ \framebox{$d_j'=d_{j-1}\delta$ if
+    $\tilde{\kappa}=0$, otherwise $d_j'=\min(d_j,d_{j-1}\delta)$.}
+\end{theorem}
+
+This theorem combines the results of Lemma \ref{th:rankBj}, Theorem
+\ref{th:upper-distance-bnd} (upper distance bounds), and Theorem
+\ref{th:lower-distance-bnd} (lower distance bound) below.  The value
+of $n_j'$ directly follows from the Definition \ref{def:dim-ext}.
+
+\section{row and column weight of CSS code}
+In many quantum error models, the probability of measurement error is related to the number of gates or qubits involved in each measurement. The row and column weight of the matrices in the complex chain can be used to determine upper and lower bound of the weight of check operators, and so the measurement error probability. It can easily be derived from the paramenter of $P$.
+
+Let $\omega_j$ be the maximum weight of rows in $P_j$, and $\tilde\omega_j$ be the maximum weight of columns in $P_j$. The maximun row weight of $A^{(m)}_j$ would be  $\omega^{(m)}_j=\max( \omega^{(m-1)}_j+\omega_m,\omega^{(m-1)}_{j-1})$, and the maximun column weight $\tilde\omega^{(m)}_j=\max( \tilde\omega^{(m-1)}_{j-1}+\tilde\omega_m,\tilde\omega^{(m-1)}_{j})$. Apply the iteration rule, one can get the general expresion: $\displaystyle \omega^{(m)}_j=\max_{\{I^{(m-j+1)}\}} S^{(m)}(\{I^{(m-j+1)}\})$, 
+$\displaystyle \tilde\omega^{(m)}_j=\max_{\{I^{(j)}\}} \tilde S^{(m)}(\{I^{(j)}\}) $. The $j$-term summation is given by $\displaystyle  S^{(m)}(\{I^{(j)}\}) = \sum_{i=1}^{j}  \omega^{(m)}_{I^{(j)}_i}$, $\displaystyle \tilde S^{(m)}(\{I^{(j)}\}) = \sum_{i=1}^{j} \tilde \omega^{(m)}_{I^{(j)}_i}$, where $\{I^{(j)}\}$ is an arbitrary size-$j$ subset of the index set $\{1,2,...,m\}$
+
+For the CSS code $ {{\cal Q}^{(m)}}(A_{j},A_{j+1}^T)$, the max row weight is \framebox{ $\max( \omega^{(m)}_j, \tilde \omega^{(m)}_{j+1})$}, which is the upper bound on weight of check operators. And the max column weight is $\max( \tilde\omega^{(m)}_j,  \omega^{(m)}_{j+1})$.
+
+In order to find the min weight $\omega'$, replace $\max$ with $\min$ and the same rules will apply. The difference is, when finding max weight, combination of rows or columns are not allowed. But when finding min weight, one can combine row or columns to get min weight.
+
+
+\section{distance of Data syndrome code}
+From a quantum code with redundant parity check matrix $G_{n_1 \times n_2}$, we define the data syndrome code as $Q=\left( \begin{array}[c]{cc} G& E_{n_1} \end{array} \right)$. There exists full rank matrix $T_{\kappa \times n_1}$ such that $TG=0$. $T$ is the parity check matrix for the classical syndrome code. Then the generating matrix for syndrome code is $F$ such that $TF^T=0$. One can see $F$ is just the full rank matrix of $G^T$. Then the minimum row weight of $F$ is just the minimum weight of $G^T$, which is the distance of the syndrome code $d_s$. Then $[n_1,k,d_s]$ is the parameters of syndrome code with parity check matrix $T$. $k=n_1-\kappa$ is the rank of $G$.
+
+Apply it to code $ {\cal Q}^{(m)}(A_{j},A_{j+1}^T)$, I will get \framebox{$[n^{(m)}_{j-1},\rank(A_j),\tilde\omega'^{(m)}_j]$} for the left part, here prime mean minimum instead of maximum. For the right part, the syndrome code has parameters  \framebox{$[n^{(m)}_{j+1},\rank(A_{j+1}),\omega'^{(m)}_j]$}. Combine them, I will get  \framebox{$[n^{(m)}_{j-1}+n^{(m)}_{j+1}, n^{(m)}_j-k^{(m)}_j ,\min(\tilde \omega'^{(m)}_j,\omega'^{(m)}_j)]$}
+
+To avoid confusion in my notation, the data syndrome code means one decode qubit error and syndrome error globally/simultaneously. If one decode syndrome error first, and then use the decoded syndrome to decode the qubit error,  the syndrome part is called syndrome code, and the qubit part is the original quantum code.
+
+Lemma: If the quantum code has distance $d_q$, and the syndrome code has distance $d_s$, then the data syndrome code would have distance \framebox{$d=\min(d_q,d_s)$}.
+
+Proof: There exists codeword from the qubit code $\mathbf{x=(e_q | 0)}$ with $\wgt (\mathbf{x})=d_q$, that gives zero syndrome, so $d \leq d_q$. Similary, there exists codeword from the syndrome code $\mathbf{x=(0 | e_s)}$ with $\wgt (\mathbf{x})=d_s$, so $d \leq d_s$. Then $d\leq \min(d_q,d_s)$
+
+For any error $\mathbf{x=(e_q | e_s)}$ with $\wgt (\mathbf{e_q}), \wgt (\mathbf{e_s}) \leq (\min(d_q,d_s)-1)/2$, it can get detected and fixed. Then $d\geq \min(d_q,d_s)$
+
+Combine them, I got $d= \min(d_q,d_s)$
+
+
+\section{Matrix ranks and dimensions of CSS codes.}
+Any pair of adjacent matrices $A_{j}$ and $A_{j+1}^T$ can obviously be
+used as generators of a quantum CSS code
+${\cal Q}_j\equiv {\cal Q}(A_{j},A_{j+1}^T)$, which I assume to encode
+$k_j$ qubits in $n_j$.  Alternatively, $k_j$ is the rank of the
+$j$\,th homology group in $\mathcal{K}$. 
+
+What are the parameters $[[n_j',k'_j,d'_j]]$
+of the codes generated by dimensionally extended matrices, e.g.,
+${\cal Q}_j'\equiv {\cal Q}(B_{j},B_{j+1}^T)$?  
+
+We already know the block length {$n_j'=n_j r+n_{j-1}c$.}  To
+find $k_j'$, denote the original ranks $s_j=\rank A_j$,
+$u\equiv \rank P$, and prove:
+\begin{lemma}
+  \label{th:rankBj}
+  Given $A_{j-1}A_{j}=0$, the  binary matrix
+  $$    B_j=\left(
+    \begin{array}[c]{c|c}
+      A_j\otimes E_r& E_{n_{j-1}}\otimes P\\ \hline%\hrule
+                    & A_{j-1}\otimes E_c
+    \end{array}\right)
+  $$
+  has the rank $s_j'\equiv \rank B_j=s_j (r-u)+s_{j-1}(c-u)+n_{j-1} u$.
+\end{lemma}
+%\end{document}
+\begin{proof}
+  Start by computing the ranks of the upper and lower row blocks using
+  the trick from Ref.~\onlinecite{Tillich-Zemor-2009}.  Namely, for
+  each block, use
+  row transformations to form distinct zero combinations.  The
+  corresponding count for the upper row block is
+$$\lc B_j'=(n_{j-1}-s_j)(r-u),$$
+and for the lower row block, trivially,
+$\lc B_j''=(n_{j-2}-s_{j-1}) c$.  This gives
+$\rank B_j'=s_j r+n_{j-1}u -s_j u$, and $\rank B_j''=c s_{j-1}$.  For
+matrices of this form, the number of  zero linear
+combinations that involve both row blocks is just the product of the
+ranks in the right blocks, ,
+$$
+\lc(B_j',B_j'')=s_{j-1}u.
+$$
+Overall, we get the stated rank of $B_j$,
+\begin{eqnarray*}
+  s_j'&=& \rank B_j=(n_{j-1}r+n_{j-2}c)-(n_{j-1}-s_j)(r-u
+          )-(n_{j-2}-s_{j-1})c-s_{j-1} u \\ 
+      &=& n_{j-1}r +n_{j-2}c -n_{j-1}r+r s_j+n_{j-1} u -s_j u
+          -cn_{j-2}+cs_{j-1}-s_{j-1}u \\  
+      &=& s_j(r-u )+s_{j-1} (c-u )+n_{j-1}u .      
+\end{eqnarray*}
+\end{proof}
+The same result can also be obtained considering column blocks.
+Check:
+\begin{eqnarray*}
+  s_j'&=&n_j r+n_{j-1}c-(n_{j-1}-s_{j-1})(c-u)-(n_j-s_j)r-s_ju\\
+  &=& n_{j-1}u+c s_{j-1}-s_{j-1}u+rs_j-s_j u= 
+\framebox{$s_j(r-u )+s_{j-1} (c-u )+n_{j-1}u .$}
+\end{eqnarray*}
+These expressions give 
+\begin{eqnarray}
+  \nonumber
+  k_j'&=& n_{j}'-\rank B_{j}-\rank B_{j+1}\\   \nonumber
+      &=& n_j r+n_{j-1}c
+          - s_{j  }(r-u)-s_{j-1}(c-u)-n_{j-1}u 
+          - s_{j+1}(r-u)-s_{j}(c-u)-n_{j}u 
+\\ \nonumber 
+  &=& (n_j-s_{j}-s_{j+1})(r-u)  +(n_{j-1}-s_{j-1}-s_{j})(c-u) \\
+  & =& k_j \tilde{\kappa}+k_{j-1}\kappa,
+\label{eq:kj-prime}
+\end{eqnarray}
+where $\kappa\equiv c-u$ and $\tilde{\kappa}\equiv r-u$ respectively are the
+dimensions of the binary codes using $P$ and $P^T$ as check matrices.
+
+For the length-two chain complex (\ref{eq:two-chain-complex-QHP}) this
+gives (setting $s_{0}=0$): 
+\begin{eqnarray}
+  k_0^{(2)}&=&r_1r_2-\rank
+               B_1=(r_1-u_1)(r_2-u_2)=\tilde{\kappa}_1\tilde{\kappa}_2,\\ 
+  k_1^{(2)}&=&(c_1-u_1)(r_2-u_2)+(r_1-u_1)(c_2-u_2)=\tilde{\kappa}_1\kappa_2+\kappa_1\tilde{\kappa}_2,\label{eq:k-two}
+  \\
+  k_2^{(2)}&=&c_1c_2-\rank B_2=(c_1-u_1)(c_2-u_2)=\kappa_1\kappa_2,
+\end{eqnarray}
+where the $k_0$ and $k_2$ correspond to classical codes with check
+matrices $B_1^T$ and $B_2$, respectively.  The value of $k_1^{(2)}$
+coincides with the result in Ref.~\onlinecite{Tillich-Zemor-2009}.
+For length-3 chain complex one gets, explicitly:
+\begin{eqnarray*}
+  k_0^{(3)}&=&\tilde{\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3,\\
+  k_1^{(3)}&=&{\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3+\tilde{\kappa}_1{\kappa}_2\tilde{\kappa}_3+\tilde{\kappa}_1\tilde{\kappa}_2{\kappa}_3,\\
+  k_2^{(3)}&=&{\kappa}_1{\kappa}_2\tilde{\kappa}_3+{\kappa}_1\tilde{\kappa}_2{\kappa}_3+\tilde{\kappa}_1{\kappa}_2{\kappa}_3,\\
+  k_3^{(3)}&=&{\kappa}_1{\kappa}_2{\kappa}_3.
+\end{eqnarray*}
+Generally, $k_j^{(m)}$ is a sum of all the products of distinct
+$\kappa_s$, $s\in\{1,\ldots,m\}$ with all possible placements of
+$(m-j)$ tildes.
+
+\section{Bounds on codes' distances}
+
+For a CSS code with binary generator matrices $P$ and $Q$, such that
+$PQ^T=0$, consider two distances different by the order of the
+generators:
+$$
+ d(P,Q)=\min_{\mathbf{x}\in {\cal C}_{P}^\perp\setminus {\cal
+     C}_{Q}} \wgt \mathbf{x},\quad 
+ d(Q,P)=\min_{\mathbf{x}\in {\cal C}_{Q}^\perp\setminus {\cal
+     C}_{P}} \wgt \mathbf{x},
+$$
+so that the actual CSS code distance is the minimum of the two.  I
+will use the convention\cite{Tillich-Zemor-2009} that an empty code
+has infinite distance, which is the same as stating
+$\min(\emptyset)=\infty$.  Notice that if one takes the right matrix
+zero, one can also get the distances of the classical binary code
+associated with the matrix $P$ (dimensions $r\times c$),
+$$
+d_P=d(P,0_{0\times c}).
+$$ 
+In any case, the distance of the code (quantum or classical, empty or
+not) cannot be zero.
+
+Again, consider an $(m-1)$-chain complex
+$$\mathcal{A}=\{0\}\stackrel{0_{0\times n_0}}\leftarrow C_0\stackrel{A_1}\leftarrow
+C_1\leftarrow\ldots\leftarrow C_{m-2}\stackrel{A_{m-1}}\leftarrow
+C_{m-1}\stackrel{0_{ n_{m-1}\times 0}}\leftarrow \{0\},$$ and its
+associated dimensionally-extended $m$-chain complex $\mathcal{B}$, see
+Definition \ref{def:dim-ext}.  Let the CSS code
+${\cal Q}(A_j,A_{j+1}^T)$ have parameters $[[n_j,k_j]]$ and the left
+and right distances $d(A_j,A_{j+1}^T)=d_j$,
+$d(A_{j+1}^T,A_j)=\tilde{d}_j$, and the binary codes with the check
+matrices $P$ and $P^T$ have distances ${\delta}$ and $\tilde{\delta}$,
+respectively.  We have the following upper bounds on the distances in
+$K'$:
+\begin{theorem}
+  \label{th:upper-distance-bnd}
+The following upper bounds apply to codes in $\mathcal{B}$: 
+  \begin{enumerate}[label=(\alph*)]
+  \item If $\tilde{\kappa}\equiv r-u>0$, then
+    $d_j'\equiv d(B_j,B_{j+1}^T)\le d_j\equiv d(A_j,A_{j+1}^T)$.
+  \item If $k_0\equiv n_0-\rank A_1>0$, then $d_1'\le \delta$.
+  \item For $j>1$,
+    $d_j'\equiv d(B_j,B_{j+1}^T)\le d_{j-1}\delta\equiv
+    d(A_{j-1},A_{j}^T)\,\delta$.
+  \end{enumerate}
+\end{theorem}
+The proofs are based on Lemma \ref{th:rankBj} and its 
+generalization, the following Lemma:
+\begin{lemma}
+  \label{th:rank-3col}
+  Consider two pairs of matrices: $A$, $B$ of dimensions
+  $n_0\times n_1$, $n_1\times n_2$ respectively, such that $AB=0$, and
+  $P$, $Q$ of dimensions $m_0\times m_1$, $m_1\times m_2$
+  respectively, such that $PQ=0$.  Then the rank of the following
+  block matrix
+$$
+M=\left(
+  \begin{array}[c]{c|c|c} B_{n_1 \times n_2}\otimes E(m_0) &
+    E(n_1)\otimes P_{m_0\times m_1} & \\ \hline & A_{n_0\otimes
+      n_1}\otimes E(m_1) & E(n_0)\otimes Q_{m_1\times m_2}
+  \end{array}
+\right)\quad \text{is}
+$$
+\begin{eqnarray*}
+  \rank M&=&m_0\rank B+n_1\rank P-\rank B\rank P \\ 
+         & & + m_1\rank A+n_0\rank Q-\rank A\rank Q-\rank A\rank P. 
+\label{eq:1}
+\end{eqnarray*}
+\end{lemma}
+In this expression, the first and second three terms are the ranks of
+the upper and lower row blocks, respectively; the last term is the
+number of rows that enter non-trivial linear combinations between the
+two blocks.
+
+\begin{proof}[Proof of Theorem \ref{th:upper-distance-bnd}]
+  For convenience, quote the definitions
+$$
+    B_1=(A_1\otimes E_{r}|E_{n_0}\otimes P),\;
+    B_2=\left(
+      \begin{array}[c]{c|c}
+        A_2\otimes E_r&E_{n_1}\otimes P\\
+        & A_1\otimes E_c
+      \end{array}\right),\; 
+    B_j=\left(
+      \begin{array}[c]{c|c}
+        A_j\otimes E_r&E_{n_{j-1}}\otimes P\\
+        & A_{j-1}\otimes E_c
+      \end{array}\right),\ldots 
+$$
+Part \emph{(a)}: We only need to consider the case where $k_j\neq0$.
+In this case we can find a minimum-weight codeword
+$\mathbf{c}\in\mathbb{F}_2^{n_j}$, $\wgt(\mathbf{c})=d_j$, such that
+$A_j\mathbf{c}^T=0$ but $\mathbf{c}\neq \alpha A_{j+1}^T$ for any
+$\mathbf{\alpha}\in\mathbb{F}_2^{n_{j+1}}$.  Clearly,
+$\mathbf{x}=(\mathbf{c}\otimes \mathbf{y}|0)$ satisfies
+$B_j \mathbf{x}^T=0$ with every $\mathbf{y}\in \mathbb{F}_2^{r}$.  We
+want a $\mathbf{y}$ of weight one, such that $\mathbf{x}$ is not a
+linear combination of rows of $B_{j+1}^T$.  To see that this is
+guaranteed by the condition $\tilde{\kappa}>0$, consider the matrix
+$B_{j+1}'$ constructed from the original $A_j$ and a modified matrix
+$A_{j+1}'$ of dimension $n_j\times (n_{j+1}+1)$, which is $A_{j+1}$
+with an added column $\mathbf{c}^T$; one has
+$\rank A_{j+1}'=\rank A_{j+1}+1$.  By construction, $A_jA_{j+1}'=0$.
+According to Lemma \ref{th:rankBj}, the modified matrix $B_{j+1}'$ has
+$\rank B_{j+1}'=\rank B_{j+1}+r-u$, which guarantees that at least
+$\tilde{\kappa}=r-u>0$ of the added columns are indeed linearly
+independent from the columns of the original $B_{j+1}$.  That is, we
+can find a weight-one vector $\mathbf{y}$ so that $\mathbf{x}$ is a
+valid codeword of weight $d_j$ in ${\cal Q}(B_j,B_{j+1})$, which
+proves the upper bound.
+
+Proof of Part \emph{(b)} is similar, except now the trial vector has
+the form $\mathbf{x}=(0,\mathbf{y}\otimes \mathbf{b})$, where
+$P\mathbf{b}^T=0$ (we only need to consider the case $\kappa>0$).  Any
+such vector clearly satisfies $B_1\mathbf{x}^T=0$.  We want
+$\mathbf{y}\in\mathbb{F}_2^{n_0}$ of unit weight, such that
+$\mathbf{x}^T$ be linearly independent from the columns of $B_2$.
+Instead of analyzing each possible $\mathbf{y}$, consider the rank of
+the matrix $B_2'$ obtained from $B_2$ by adding a block
+$E(n_0)\otimes \mathbf{b}^T$ in the second block row (and a zero block
+of size $n_{j-1}r\times n_0$ above it).  Resulting matrix $B_2'$
+satisfies the conditions of Lemma \ref{th:rank-3col}, which gives
+$\rank B_2'=\rank B_2+(n_0-\rank A_1)$; indeed, whenever $k_0>0$, we
+can find a codeword of weight $\delta$.
+
+Part \emph{(c)}: Again, we only need to consider the case $k_{j-1}>0$
+and $\kappa>0$, so that minimum-weight codewords
+$\mathbf{c}\in {\cal Q}(A_{j-1},A_{j}^T)$ and
+$\mathbf{b}\in {\cal C}_P^\perp$ cab be found;
+$d_{j-1}=\wgt(\mathbf{c})$, $\delta=\wgt(\mathbf{b})$.  The trial
+codeword has the block form
+$\mathbf{x}=(0|\mathbf{c}\otimes \mathbf{b})$, it satisfies
+$B_{j}\mathbf{x}^T=0$.  Also, since $\mathbf{c}^T$ is linearly
+independent from the columns of $A_{j-1}$, it follows from Lemma
+\ref{th:rank-3col} that $\mathbf{x}^T$ is linearly independent from
+the columns of $B_{j+1}$.  Indeed, it is easy to see that if we took
+instead of the $\mathbf{c}^T$ a linear combination of the columns of
+$A_{j-1}$, the additional block would not affect the rank since it may
+be eliminated by column transformations.  If the same were true for
+the vector $\mathbf{c}^T$ linearly independent from columns
+of $A_{j-1}$, we would get a contradiction with Lemma
+\ref{th:rank-3col}.
+\end{proof}
+
+Notice that parts (b) and (c) in Theorem \ref{th:upper-distance-bnd}
+can be united if we take $d_0=1$.  In the following, we assume this to
+be the case. 
+\begin{theorem}
+  \label{th:lower-distance-bnd}
+The left minimum distance $d_j'=d(B_j,B_{j+1}^T)$ of the CSS code with
+generators $B_j$ and $B_{j+1}^T$ satisfies the following lower bound:
+(i) if $\tilde{\kappa}=0$, $d_j'\ge d_{j-1}\delta$. 
+(ii) Otherwise, if $\tilde{\kappa}>0$,  $d_j'\ge \min(d_j,d_{j-1}\delta)$.  
+\end{theorem}
+The proof relies on the following Lemma, a generalization of a
+statement used in the proof of the minimum-distance bound for the
+hypergraph-product codes\cite{Tillich-Zemor-2009}.
+
+
+\begin{lemma}
+  \label{th:subset-linear-dependence}
+  Consider the matrices $B_1$ and $B_2$, such that $B_1B_2=0$,
+  constructed from the matrices $A_1^{(n_0\times n_1)}$,
+  $A_2^{(n_1\times n_2)}$, and $P^{(r\times c)}$ as in
+  Eq.~(\ref{eq:B1}).  Let $I_1\subseteq\{1,2,\ldots,n_1\}$ and
+  $I_2\subseteq\{1,2,\ldots,c\}$ denote two arbitrary index sets, and
+  the support of each of the vectors
+  $\mathbf{a}_i\in \mathbb{F}_2^{n_1}$, $i\le r$, and
+  $\mathbf{b}_j\in \mathbb{F}_2^{c}$, $j\le n_0$, respectively, be
+  contained inside of $I_1$ and $I_2$.  Consider
+  $\mathbf{e}=(\sum_{i=1}^{r} \mathbf{a}_{i}\otimes
+  \mathbf{y}_i^{(r)}|\sum_{j=1}^{n_0} \mathbf{y}_j^{(n_0)}\otimes
+  \mathbf{b}_j)$ where $\mathbf{y}_i^{(s)}\in\mathbb{F}_2^s$ is a
+  vector with the only non-zero element at the position $i$, such that
+  $B_1 \mathbf{e}^T=0$.  Consider matrices $B_1'$ and $B_2'$ similarly
+  constructed from $A_1'$, $A_2'$, and $P'$, where $A_1'$ and $P'$ are
+  constructed from $A_1$ and $P$ by keeping only the columns in $I_1$
+  and $I_2$, respectively, and $A_2'$ is a generator matrix of the
+  code $\mathcal{C}_{A_2}$ \emph{shortened} to $I_2$ [That is, we take
+  a subcode of $\mathcal{C}_{A_2}$ consisting of codewords with
+  $c_i=0$ outside of $I_2$, and \emph{puncture} it at these
+  positions.]  Also, define vectors $\mathbf{a}_i'$ and
+  $\mathbf{b}_j'$ by dropping the (all-zero) components outside of
+  $I_1$ and $I_2$, respectively, and the corresponding vector
+  $\mathbf{e}'$ which satisfies $G_x'(\mathbf{e}')^T=0$.  With these
+  definitions, if $\mathbf{e}'$ is a linear combination of rows of
+  $B_2'$, then $\mathbf{e}$ is a linear combination of rows of $B_2$.
+\end{lemma}
+\begin{proof}[Proof of Theorem \ref{th:lower-distance-bnd}]
+  For the reference, we are looking at  
+  $$
+  B_j=\left(
+    \begin{array}[c]{c|c}
+      A_j\otimes E_r&E_{n_{j-1}}\otimes P\\ \hline 
+                    & A_{j-1}\otimes E_c
+    \end{array}\right),\quad 
+  B_{j+1}^T=\left(
+    \begin{array}[c]{c|c}
+      A_{j+1}^T\otimes E_r& \\ \hline 
+      E_{n_{j}}\otimes P^T        & A_{j}^T\otimes E_c
+    \end{array}\right).
+  $$
+  Consider a two-block vector
+  $\mathbf{e}=(\mathbf{e}_1|\mathbf{e}_2)$, with
+  $\mathbf{e}_1\in\mathbb{F}_2^{n_j r}$,
+  $\mathbf{e}_2\in\mathbb{F}_2^{n_{j-1} c}$, where
+  $w_1\equiv \wgt(\mathbf{e}_1)<d_j$, and
+  $w_2\equiv \wgt(\textbf{e}_2)<d_{j-1}\delta$, and assume
+  $B_j \mathbf{e}^T=0$.  We are going to show that $\mathbf{e}$ is a
+  linear combination of rows of $B_{j+1}^T$ by using Lemma
+  \ref{th:subset-linear-dependence} twice.
+
+  step 1: given $\mathbf{e}_1$, mark the columns in $A_j$ which are
+  incident on non-zero positions in $\mathbf{e}$.  Denote the
+  corresponding index set and the submatrix of $A_j$, respectively, as
+  $I_1\subset\{1,2,\ldots,n_j\}$ and $A_j'$.  As in Lemma
+  \ref{th:subset-linear-dependence}, denote $A_{j+1}'$ the generator
+  matrix of the code $\mathcal{C}_{A_{j+1}}$ shortened at the
+  positions outside of $I_1$.  By assumption, $I_1$ is an erasable set
+  in $\mathcal{Q}(A_j,A_{j+1}^T)$; this implies that
+  $\mathcal{Q}\biglb(A_j',(A_{j+1}')^T\bigrb)$ encodes no qubits.
+  Take $P'=P$, and construct the corresponding matrices $B_1'$ and
+  $B_2'$, the shortened vectors $\mathbf{a}_i'$, as well as the
+  corresponding vector
+  $\mathbf{e}'\equiv
+  (\mathbf{e}_1'|\mathbf{e}_2)$ which satisfies
+  $B_1'(\mathbf{e}_1')^T=0$. 
+  The point of the first reduction is that the code
+  $\mathcal{Q}'=\mathcal{Q}(A_j',(A_{j+1}')^T)$ encodes no qubits, so
+  that the weight of the first block in $\mathbf{e}$ no longer
+  matters.
+
+  Step 2: Consider the representation of the vector
+  \begin{equation}
+  \mathbf{e}_2=\sum_{\ell=1}^c \mathbf{f}_\ell^{(n_{j-1})}\otimes
+  \mathbf{y}_\ell^{(c)},\label{eq:second-KP-representation}  
+\end{equation}
+where the assumed identity $B_{j}(\mathbf{e}')^T=0$ implies
+$A_{j-1}\mathbf{f}_\ell^T=0$ for any $1\le \ell\le c$.  For those
+$\ell $ where $\mathbf{f}_{\ell}$ is linearly dependent with the rows
+of $A_j^T$, $\mathbf{f}_\ell=\alpha_\ell A_j^T$, render this vector to
+zero by the linear transformation
+$$\mathbf{e}'\to \mathbf{e}'+(0|\alpha_\ell\otimes
+\mathbf{y}_\ell^{(c)})\cdot (B_{j+1}')^T.$$ Such a transformation only
+affects one vector $\mathbf{f}_\ell$.  The resulting vector
+$\bar{\mathbf{e}}'=(\mathbf{e}_1'|\mathbf{e}_2')$ has the second block
+of weight $\wgt(\mathbf{e}_2')\le \wgt(\mathbf{e}_2)<d_{j-1}\delta$,
+it satisfies $B_{j}'(\bar{\mathbf{e}}')^T=0$, and in the corresponding
+block representation (\ref{eq:second-KP-representation}) the remaining
+non-zero vectors $\mathbf{f}_\ell^{(n_{j-1})}$ all have weights
+$d_{j-1}$ or larger.
+
+This means that, for sure, there remains fewer than $\delta$ of these
+non-zero vectors $\mathbf{f}_\ell$.  Therefore, in the representation
+$\mathbf{e}_2'=\sum_{j=1}^{n_0}\mathbf{y}_j^{(n_0)}\otimes
+\mathbf{b}_j'$ compatible with Lemma
+\ref{th:subset-linear-dependence}, the union of supports of vectors
+$\mathbf{b}_j'$, $I_2'$, has cardinality $|I_2'|<\delta$.  Indeed,
+$I_2'$ is just the set of the indices $\ell$ corresponding to the
+remaining non-zero vectors $\mathbf{f}_\ell^{(n_{j-1})}$.
+
+Finally, in step 3, trim the columns of $P$, keeping only the
+positions inside $I_2'$.  Since there are fewer then $\delta$ columns
+left, $c'=|I_2'|<\delta$, the resulting classical code contains no
+non-zero vectors, $c'=\rank P'$.  Now, after we trimmed  the
+columns of both $A_j$ and of $P$, according to
+Eq.~(\ref{eq:kj-prime}), 
+$\mathcal{Q}\biglb( B_j'',\check (B_{j+1})^T\bigrb)$ encodes no qubits; thus the
+corresponding vector $\mathbf{e}''$ which satisfies $B_j''
+(\mathbf{e}'')^T=0$, is a linear combination of the rows of
+$ (B_{j+1}'')^T$.  
+
+We can now use Lemma \ref{th:subset-linear-dependence} to show that
+the vector $\bar{\mathbf{e}}'$ is a linear combination of the rows of
+$(B_{j+1}')^T$; this remains true for the vector $\mathbf{e}'$.  Using
+Lemma \ref{th:subset-linear-dependence} again we see that the original
+two-block vector  $\mathbf{e}$ with the block weights $w_1<d_{j}$
+and $w_2<d_{j-1}\delta$ which satisfies $B_j\mathbf{e}^T=0$ is
+necessarily a linear combination of the rows of $B_{j+1}^T$.  This
+guarantees $d_j'\ge \min(d_{j},d_{j-1}\delta)$.  
+
+To complete the proof, consider the case $\tilde{\kappa}=0$
+separately.  Here, step 1 can be omitted; the code resulting from
+steps 2 and 3 alone would encode no qubits, regardless of the weight
+$\wgt(\mathbf{e}_1)$ of the first block.   Thus, in this case we get
+the more generous lower bound $d_j'\ge d_{j-1}\delta$.
+\end{proof}
+
+\section{Explicit code parametes}
+
+Consider the special case of a four-dimensional construction, from
+four matrices $P_j$, $j\in\{1,2,3,4\}$, of dimension $r_j\times c_j$,
+with rank $u_j>0$, so that the binary codes with the check matrices
+$P_j$ and $P_j'$ have distances $\delta_j$ and $\tilde{\delta}_j$,
+respectively.  The parameters of thus constructed codes are given in
+the Table \ref{tab:params} on page \pageref{tab:params} (assuming all
+matrices have non-zero rank).
+
+\begin{turnpage}
+\begin{table}[htbp]
+  \centering\small
+  \begin{tabular}[c]{c||c|c|c|c|c}
+    $m$ 
+    & $n_0^{(m)}=n_0^{(m-1)}r_m$ & $n_1^{(m)}=n_1^{(m-1)}r_m+n_0^{(m-1)}c_m$ & $n_2^{(m)}=n_2^{(m-1)}r_m+n_1^{(m-1)}c_m$ & $n_3$ & $n_4$ \\ \hline
+    $1$  & $r_1$ & $c_1$ &  & & \\ \hline 
+    $2$  & $r_1r_2$ & $r_1c_2+c_1r_2$ & $c_1c_2$ & & \\ \hline 
+    $3$ & $r_1r_2r_3$ & $r_1r_2c_3+r_1c_2r_3+c_1r_2r_3$ 
+                    & $r_1c_2c_3+c_1r_2c_3+c_1c_2r_3$ 
+                            & $c_1c_2c_3$ & \\ \hline 
+    $4$ & $r_1r_2r_3r_4 $ &
+                            \begin{minipage}[c]{1.2in}
+                              $r_1r_2r_3c_4+r_1r_2c_3r_4$ \\
+                              $r_1c_2r_3r_4+c_1r_2r_3r_4$ 
+                            \end{minipage} 
+    & \begin{minipage}[c]{1.9in}
+      $c_1r_2r_3c_4+c_1r_2c_3r_4+c_1c_2r_3r_4$ \\
+      $r_1c_2r_3c_4+r_1c_2c_3r_4+r_1r_2c_3c_4$ 
+    \end{minipage} 
+    &                        \begin{minipage}[c]{1.3in}
+                              \strut\hfill$r_1c_2c_3c_4+c_1r_2c_3c_4$ \\
+                              $+c_1c_2r_3c_4+c_1c_2c_3r_4$\strut
+                            \end{minipage}
+    & $c_1c_2c_3c_4$ ${}_{\strut}$ \\ \hline\hline
+%  \end{tabular}
+%
+%  \begin{tabular}[c]{c||c|c|c|c|c}
+m     & $k_0^{(m)}=k_0^{(m-1)}\tilde{\kappa}_m$ & $k_1=k_0^{(m-1)}{\kappa}_m+k_1^{(m-1)}\tilde{\kappa}_m$ & $k_2$ & $k_3$ & $k_4$ \\ \hline
+ 1& $\tilde{\kappa}_1 $
+            & $\kappa_1$ & &     \\    \hline   
+    2  & $\tilde{\kappa}_1\tilde{\kappa}_2 $
+                    & $\tilde{\kappa}_1\kappa_2  +\kappa_1\tilde{\kappa}_2$
+                            & $\kappa_1\kappa_2$ &  & \\ \hline 
+    3& $\tilde{\kappa}_1 \tilde{\kappa}_2 \tilde{\kappa}_3$ 
+            & ${\kappa}_1 \tilde{\kappa}_2
+              \tilde{\kappa}_3+\tilde{\kappa}_1 {\kappa}_2
+              \tilde{\kappa}_3+\tilde{\kappa}_1 \tilde{\kappa}_2
+              {\kappa}_3$
+                    & 
+                      ${\kappa}_1 {\kappa}_2
+                      \tilde{\kappa}_3+{\kappa}_1 \tilde{\kappa}_2 
+              {\kappa}_3+\tilde{\kappa}_1 {\kappa}_2
+              {\kappa}_3$
+            &  ${\kappa}_1{\kappa}_2  {\kappa}_3$\\ \hline 
+    4 &
+        $\tilde{\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3\tilde{\kappa}_4$
+            & \begin{minipage}[c]{1.5in}
+              \strut\hfill
+              ${\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3\tilde{\kappa}_4+\tilde{\kappa}_1{\kappa}_2\tilde{\kappa}_3\tilde{\kappa}_4$\\
+              $+\tilde{\kappa}_1\tilde{\kappa}_2{\kappa}_3\tilde{\kappa}_4+\tilde{\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3{\kappa}_4$\strut
+            \end{minipage}
+            & \begin{minipage}[c]{2.3in}
+              \strut\hfill
+              ${\kappa}_1{\kappa}_2\tilde{\kappa}_3\tilde{\kappa}_4+{\kappa}_1\tilde{\kappa}_2{\kappa}_3\tilde{\kappa}_4+{\kappa}_1\tilde{\kappa}_2\tilde{\kappa}_3{\kappa}_4$\\
+              $+\tilde{\kappa}_1{\kappa}_2{\kappa}_3\tilde{\kappa}_4+\tilde{\kappa}_1{\kappa}_2\tilde{\kappa}_3{\kappa}_4+\tilde{\kappa}_1\tilde{\kappa}_2{\kappa}_3{\kappa}_4$\strut
+            \end{minipage} 
+    & \begin{minipage}[c]{1.5in}
+      \strut\hfill
+      ${\kappa}_1{\kappa}_2{\kappa}_3\tilde{\kappa}_4+{\kappa}_1{\kappa}_2\tilde{\kappa}_3{\kappa}_4$\\
+      $+{\kappa}_1\tilde{\kappa}_2{\kappa}_3{\kappa}_4+\tilde{\kappa}_1{\kappa}_2{\kappa}_3{\kappa}_4$\strut
+            \end{minipage} & ${\kappa}_1{\kappa}_2{\kappa}_3{\kappa}_4$
+\\ \hline\hline 
+    & $d_0$ & $d_1$ & $d_2$ & $d_3$ & $d_4$ \\ \hline 
+1 & $\tilde{\kappa}_1>0? 1:\infty$ & $\delta_1$ & & &  \\ \hline 
+2 & $\tilde{\kappa}_2>0? d_0^{(m=1)}:\infty$
+                                 &   \begin{minipage}[c]{2.5in}
+                   $\tilde{\kappa}_2>0?
+                   \min\biglb(d_1^{(1)},d_0^{(1)}\delta_2\bigrb):d_0^{(1)}\delta_2
+                   {}_{\strut}^{\strut}$\\
+                   \hrule{\hfill}                 
+                   $\tilde{\kappa}_1\tilde{\kappa}_2>0:  \;  
+                   \min({\delta}_1,\delta_2)$\hfill\strut\\
+                   $\tilde{\kappa}_1=0:  \;
+                   \delta_2$\hfill\strut\\
+                   $\tilde{\kappa}_2=0:  \;
+                   \delta_1$\hfill\strut
+                 \end{minipage}
+    & $\delta_1\delta_2$ &  \\ \hline 
+    3&  $\tilde{\kappa}_3>0? d_0^{(m=2)}:\infty$ &   \begin{minipage}[c]{2.2in}
+                   $\tilde{\kappa}_3>0:  \;  
+                   \min(d_1^{(m=2)},d_0^{(m=2)}\delta_3)$\hfill\strut\\
+                   $\tilde{\kappa}_3=0:  \;
+                   d_0^{(m=2)}\delta_3$\hfill\strut
+                 \end{minipage} 
+    &   \begin{minipage}[c]{2.1in}
+      $\tilde{\kappa}_3>0:  \;  
+      \min(d_2^{(m=2)},d_1^{(m=2)}\delta_3)$\hfill\strut\\
+      $\tilde{\kappa}_3=0:  \;
+      d_1^{(m=2)}\delta_3$\hfill\strut
+    \end{minipage} & $\delta_1\delta_2\delta_3$
+\\ \hline 
+    4 & $\tilde{\kappa}_4>0? d_0^{(m=3)}:\infty$ &  \begin{minipage}[c]{2.1in}
+      $\tilde{\kappa}_4>0:  \;  
+      \min(d_1^{(m=3)},d_0^{(m=3)}\delta_4)$\hfill\strut\\
+      $\tilde{\kappa}_4=0:  \;
+      d_0^{(m=3)}\delta_4$\hfill\strut
+    \end{minipage} & \ldots & \ldots & $\delta_1\delta_2\delta_3\delta_4$
+  \end{tabular}
+  \caption{Parameters of the first four chain complexes.  The distance
+    is minimized over all
+    non-zero combinations of the products of $\delta_j$ and
+    $\tilde{\delta}_j$ corresponding to the products of $\kappa_j$ and $\tilde{\kappa}_j$
+    that actually contribute to the total $k$.}
+  \label{tab:params}
+\end{table}
+\end{turnpage}
+
+\bibliography{lpp,qc_all,more_qc,linalg}
+\end{document}

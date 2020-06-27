@@ -1,0 +1,1124 @@
+********************************************************* result80-11.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-11-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 0 0 
+      1 0 1 1 
+      0 1 1 1 
+      1 1 1 0 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-11-P2.mm
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-11-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.8125 ----
+      1 1 1 1 
+      1 1 0 1 
+      1 1 0 1 
+      1 0 1 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-11-P3.mm
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-11-P3.mm
+wrote the matrix (density:0.75) into file data/random/pool/trail80-11-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      1 1 1 0 
+      1 1 1 0 
+      0 1 1 1 
+      1 1 0 1 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-11-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 1 
+      1 1 0 0 
+      0 1 0 0 
+      1 1 1 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	3	
+4	4	1	2	1	2	
+4	4	1	3	1	2	
+4	4	1	2	1	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	2	6	
+1	2	6	18	
+1	2	4	12	36	
+d0	d1	d2	d3	d4	d(right)
+3	1	
+6	2	1	
+12	4	2	1	
+24	8	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	6	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	2	4	12	
+                          d_right=8	4	2	
+Elapsed time = 52.3977 seconds
+********************************************************* result80-12.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.5) into file data/random/pool/trail80-12-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 1 0 
+      1 1 1 1 
+      0 0 1 0 
+      0 1 0 1 
+
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-12-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.8125 ----
+      1 0 1 1 
+      1 1 0 1 
+      1 0 1 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-12-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      0 1 1 1 
+      0 1 1 1 
+      1 1 0 1 
+      1 0 1 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-12-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      0 1 1 1 
+      0 1 1 1 
+      0 1 1 1 
+      0 1 1 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	1	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+3	12	18	12	3
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	2	1	2	
+4	4	1	2	1	2	
+4	4	1	3	1	2	
+4	4	3	1	3	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+1	2	4	
+1	2	4	12	
+1	1	2	4	12	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+4	2	1	
+8	4	2	1	
+16	8	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 12	18	12	
+d_left=	1	2	4	
+                          d_right=8	4	2	
+Elapsed time = 55.6302 seconds
+********************************************************* result80-13.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.625) into file data/random/pool/trail80-13-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 0 0 
+      0 0 0 1 
+      1 1 0 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-13-P2.mm
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-13-P2.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-13-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 0 0 1 
+      1 1 0 1 
+      1 1 1 1 
+      1 0 0 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-13-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      0 0 0 1 
+      1 1 1 1 
+      1 1 0 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.5) into file data/random/pool/trail80-13-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 1 1 
+      0 1 0 0 
+      0 1 1 1 
+      1 0 0 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	2	1	3	
+4	4	1	2	1	2	
+4	4	1	2	1	2	
+4	4	1	3	1	3	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+1	2	4	
+1	2	4	8	
+1	2	4	8	24	
+d0	d1	d2	d3	d4	d(right)
+3	1	
+6	2	1	
+12	4	2	1	
+36	12	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	2	4	8	
+                          d_right=12	4	2	
+Elapsed time = 46.7775 seconds
+********************************************************* result80-14.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-14-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 0 
+      0 0 1 1 
+      1 1 1 1 
+      1 1 0 0 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-14-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 1 0 
+      1 1 0 1 
+      0 0 1 1 
+      1 0 0 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-14-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      0 1 0 1 
+      1 1 1 1 
+      1 1 1 0 
+      1 1 1 0 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-14-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 0 1 0 
+      0 1 1 1 
+      0 1 1 1 
+      1 0 1 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	2	1	3	
+4	4	1	3	1	3	
+4	4	1	2	1	2	
+4	4	1	3	1	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+1	2	6	
+1	2	4	12	
+1	2	4	12	36	
+d0	d1	d2	d3	d4	d(right)
+3	1	
+9	3	1	
+18	6	2	1	
+36	12	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=3	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=6	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	2	4	12	
+                          d_right=12	4	2	
+Elapsed time = 54.1281 seconds
+********************************************************* result80-15.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-15-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5625 ----
+      0 1 1 0 
+      1 1 1 0 
+      1 0 1 0 
+      1 0 1 0 
+
+wrote the matrix (density:0.5) into file data/random/pool/trail80-15-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 0 1 
+      1 0 1 1 
+      1 1 0 0 
+      0 1 1 0 
+
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-15-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.8125 ----
+      1 1 1 1 
+      1 1 1 0 
+      1 1 1 1 
+      0 1 0 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-15-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 1 1 
+      1 0 0 1 
+      0 1 0 1 
+      0 1 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	1	1	2	
+4	4	1	3	1	4	
+4	4	1	2	1	2	
+4	4	1	4	1	3	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	1	
+1	1	3	
+1	1	2	6	
+1	1	2	6	24	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+8	2	1	
+16	4	2	1	
+48	12	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	1	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	1	2	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	1	2	6	
+                          d_right=12	4	2	
+Elapsed time = 45.6738 seconds
+********************************************************* result80-16.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.625) into file data/random/pool/trail80-16-P1.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-16-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 1 0 
+      1 0 1 1 
+      0 1 1 1 
+      0 0 1 0 
+
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-16-P2.mm
+wrote the matrix (density:0.5) into file data/random/pool/trail80-16-P2.mm
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-16-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.8125 ----
+      1 1 1 1 
+      1 1 0 0 
+      1 1 1 0 
+      1 1 1 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-16-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      1 0 1 1 
+      1 0 1 1 
+      0 1 0 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.875) into file data/random/pool/trail80-16-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.875 ----
+      1 1 1 1 
+      1 1 1 1 
+      1 1 0 1 
+      1 1 0 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	2	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+2	8	12	8	2
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	4	
+4	4	1	2	1	2	
+4	4	1	2	1	2	
+4	4	2	2	2	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	2	6	
+1	2	4	12	
+1	2	4	8	24	
+d0	d1	d2	d3	d4	d(right)
+4	1	
+8	2	1	
+16	4	2	1	
+32	8	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 8	12	8	
+d_left=	2	4	8	
+                          d_right=8	4	2	
+Elapsed time = 47.8885 seconds
+********************************************************* result80-1.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.625) into file data/random/pool/trail80-1-P1.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-1-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 0 
+      1 1 0 0 
+      0 0 1 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-1-P2.mm
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-1-P2.mm
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-1-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.4375 ----
+      0 1 0 0 
+      0 1 1 1 
+      1 0 0 0 
+      1 0 0 1 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-1-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 0 1 1 
+      1 1 1 0 
+      0 1 1 0 
+      1 1 0 1 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-1-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      1 0 0 1 
+      1 1 1 1 
+      0 1 1 0 
+      1 1 1 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	4	3	2	
+k0	k1	k2	k3	k4
+1	1
+0	0	0
+0	0	0	0
+0	0	0	0	0
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	2	1	3	
+4	4	0	999	0	999	
+4	4	1	3	1	3	
+4	4	2	2	2	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+999	999	999	
+999	999	999	999	
+999	999	999	999	999	
+d0	d1	d2	d3	d4	d(right)
+3	1	
+999	999	999	
+999	999	999	999	
+999	999	999	999	999	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 0	
+d_left=	999	
+                          d_right=999	
+                                                     n= 64	192	192	64
+                                                                                           k= 0	0	
+d_left=	999	999	
+                          d_right=999	999	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 0	0	0	
+d_left=	999	999	999	
+                          d_right=999	999	999	
+Elapsed time = 49.3419 seconds
+********************************************************* result80-2.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.5) into file data/random/pool/trail80-2-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 1 1 
+      0 1 0 0 
+      1 0 0 1 
+      1 1 0 1 
+
+wrote the matrix (density:0.5) into file data/random/pool/trail80-2-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 1 0 1 
+      0 0 1 1 
+      1 0 0 1 
+      0 0 1 1 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-2-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      0 1 1 1 
+      0 1 1 1 
+      1 0 1 1 
+      1 1 0 0 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-2-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      1 1 1 0 
+      1 1 1 0 
+      1 1 1 1 
+      1 0 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	2	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+2	6	6	2
+2	8	12	8	2
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	3	
+4	4	1	4	1	2	
+4	4	2	2	2	2	
+4	4	1	2	1	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	3	12	
+1	2	6	24	
+1	2	4	12	48	
+d0	d1	d2	d3	d4	d(right)
+3	1	
+6	2	1	
+12	4	2	1	
+24	8	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	3	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 6	6	
+d_left=	2	6	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 8	12	8	
+d_left=	2	4	12	
+                          d_right=8	4	2	
+Elapsed time = 48.8638 seconds
+********************************************************* result80-3.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-3-P1.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-3-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 0 0 1 
+      1 0 1 0 
+      0 1 1 1 
+      0 1 1 1 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-3-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 1 
+      1 1 1 0 
+      1 1 1 0 
+      1 0 0 0 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-3-P3.mm
+wrote the matrix (density:0.875) into file data/random/pool/trail80-3-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.875 ----
+      1 1 1 1 
+      0 1 1 1 
+      1 1 0 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-3-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.4375 ----
+      1 0 1 1 
+      0 0 0 0 
+      0 1 1 1 
+      0 1 0 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	2	
+4	4	1	2	1	2	
+4	4	1	2	1	2	
+4	4	1	2	1	1	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	2	6	
+1	2	4	12	
+1	2	4	8	24	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+4	2	1	
+8	4	2	1	
+8	4	2	1	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	2	4	8	
+                          d_right=4	2	1	
+Elapsed time = 43.2785 seconds
+********************************************************* result80-4.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.75) into file data/random/pool/trail80-4-P1.mm
+wrote the matrix (density:0.875) into file data/random/pool/trail80-4-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.875 ----
+      1 1 1 1 
+      1 1 1 1 
+      1 1 0 1 
+      1 1 0 1 
+
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-4-P2.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-4-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 1 
+      0 1 1 1 
+      1 0 0 0 
+      1 1 0 1 
+
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-4-P3.mm
+wrote the matrix (density:0.5) into file data/random/pool/trail80-4-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 1 0 
+      1 1 1 0 
+      1 1 0 1 
+      0 0 0 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-4-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 0 1 1 
+      1 1 0 1 
+      0 1 1 0 
+      1 0 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	2	3	3	3	
+k0	k1	k2	k3	k4
+2	2
+2	4	2
+2	6	6	2
+2	8	12	8	2
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	2	2	2	2	
+4	4	1	2	1	3	
+4	4	1	2	1	4	
+4	4	1	3	1	3	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+1	2	4	
+1	2	4	8	
+1	2	4	8	24	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+6	2	1	
+24	6	2	1	
+72	18	6	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 4	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 6	6	
+d_left=	2	4	
+                          d_right=6	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 8	12	8	
+d_left=	2	4	8	
+                          d_right=18	6	2	
+Elapsed time = 53.3133 seconds
+********************************************************* result80-5.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-5-P1.mm
+wrote the matrix (density:0.75) into file data/random/pool/trail80-5-P1.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-5-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 0 0 
+      0 1 0 1 
+      1 1 1 0 
+      0 1 1 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-5-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      0 1 1 1 
+      1 0 1 1 
+      0 1 1 0 
+      1 0 1 0 
+
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-5-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5625 ----
+      1 1 0 0 
+      1 0 1 1 
+      1 1 0 0 
+      0 1 0 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-5-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      0 1 1 0 
+      1 1 1 1 
+      1 0 0 1 
+      1 0 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	4	
+4	4	1	3	1	4	
+4	4	1	3	1	2	
+4	4	1	4	1	3	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	3	9	
+1	3	9	27	
+1	3	9	27	108	
+d0	d1	d2	d3	d4	d(right)
+4	1	
+16	4	1	
+32	8	2	1	
+96	24	6	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	3	
+                          d_right=4	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	3	9	
+                          d_right=8	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	3	9	27	
+                          d_right=24	6	2	
+Elapsed time = 64.8446 seconds
+********************************************************* result80-6.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-6-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      0 1 1 0 
+      1 1 1 1 
+      0 1 1 0 
+      1 0 1 1 
+
+wrote the matrix (density:0.875) into file data/random/pool/trail80-6-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.875 ----
+      1 1 0 1 
+      1 1 1 1 
+      0 1 1 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-6-P3.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-6-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      0 1 0 1 
+      1 0 0 1 
+      1 1 1 1 
+      0 1 0 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-6-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 1 0 
+      1 0 0 1 
+      1 0 0 1 
+      1 1 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	2	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+2	8	12	8	2
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	2	1	2	
+4	4	1	2	1	2	
+4	4	1	4	1	2	
+4	4	2	2	2	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	2	
+1	2	4	
+1	2	4	16	
+1	2	4	8	32	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+4	2	1	
+8	4	2	1	
+16	8	4	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 8	12	8	
+d_left=	2	4	8	
+                          d_right=8	4	2	
+Elapsed time = 49.8353 seconds
+********************************************************* result80-7.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.625) into file data/random/pool/trail80-7-P1.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-7-P1.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-7-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      0 1 1 1 
+      1 0 1 1 
+      1 0 1 1 
+      1 0 0 1 
+
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-7-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.8125 ----
+      1 0 1 1 
+      1 1 1 1 
+      1 1 1 1 
+      0 1 1 0 
+
+wrote the matrix (density:0.75) into file data/random/pool/trail80-7-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.75 ----
+      1 0 1 0 
+      1 0 1 1 
+      1 1 1 1 
+      1 1 1 0 
+
+wrote the matrix (density:0.5) into file data/random/pool/trail80-7-P4.mm
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-7-P4.mm
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-7-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5625 ----
+      0 1 1 0 
+      1 1 0 0 
+      1 1 1 1 
+      0 0 1 0 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	4	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+0	0	0	0	0
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	2	
+4	4	1	2	1	2	
+4	4	1	2	1	4	
+4	4	0	999	0	999	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	2	6	
+1	2	4	12	
+999	999	999	999	999	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+4	2	1	
+16	4	2	1	
+999	999	999	999	999	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	2	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	2	4	
+                          d_right=4	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 0	0	0	
+d_left=	999	999	999	
+                          d_right=999	999	999	
+Elapsed time = 36.3499 seconds
+********************************************************* result80-8.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-8-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5625 ----
+      0 1 0 1 
+      1 0 1 1 
+      0 1 1 0 
+      0 1 0 1 
+
+wrote the matrix (density:0.8125) into file data/random/pool/trail80-8-P2.mm
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-8-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.6875 ----
+      1 1 1 1 
+      0 0 0 0 
+      1 0 1 1 
+      1 1 1 1 
+
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-8-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.4375 ----
+      0 1 0 0 
+      0 1 1 0 
+      1 0 0 1 
+      0 1 1 0 
+
+wrote the matrix (density:0.6875) into file data/random/pool/trail80-8-P4.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-8-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      1 1 1 0 
+      1 0 0 0 
+      1 1 0 1 
+      1 1 0 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	2	3	3	
+k0	k1	k2	k3	k4
+1	1
+2	4	2
+2	6	6	2
+2	8	12	8	2
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	2	
+4	4	2	2	2	1	
+4	4	1	2	1	2	
+4	4	1	3	1	2	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	2	6	
+1	2	4	12	
+1	2	4	12	36	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+2	1	1	
+4	2	1	1	
+8	4	2	1	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 4	
+d_left=	2	
+                          d_right=1	
+                                                     n= 64	192	192	64
+                                                                                           k= 6	6	
+d_left=	2	4	
+                          d_right=2	1	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 8	12	8	
+d_left=	2	4	12	
+                          d_right=4	2	1	
+Elapsed time = 43.1378 seconds
+********************************************************* result80-9.log
+    P[i]=generate_random_P(0.7,4,4,5,"null");//p,x,y,filename
+wrote the matrix (density:0.4375) into file data/random/pool/trail80-9-P1.mm
+P[1] ---- GF(2) matrix of dimension 4*4 -- Density: 0.4375 ----
+      1 0 0 1 
+      0 0 1 1 
+      0 0 1 1 
+      0 1 0 0 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-9-P2.mm
+wrote the matrix (density:0.75) into file data/random/pool/trail80-9-P2.mm
+wrote the matrix (density:0.625) into file data/random/pool/trail80-9-P2.mm
+P[2] ---- GF(2) matrix of dimension 4*4 -- Density: 0.625 ----
+      0 1 0 0 
+      1 1 1 0 
+      0 1 1 1 
+      1 1 0 1 
+
+wrote the matrix (density:0.5) into file data/random/pool/trail80-9-P3.mm
+P[3] ---- GF(2) matrix of dimension 4*4 -- Density: 0.5 ----
+      0 0 1 0 
+      1 1 0 0 
+      0 1 1 1 
+      1 0 0 1 
+
+wrote the matrix (density:0.625) into file data/random/pool/trail80-9-P4.mm
+wrote the matrix (density:0.5625) into file data/random/pool/trail80-9-P4.mm
+wrote the matrix (density:0.375) into file data/random/pool/trail80-9-P4.mm
+P[4] ---- GF(2) matrix of dimension 4*4 -- Density: 0.375 ----
+      1 1 0 0 
+      0 1 0 0 
+      0 1 0 1 
+      0 0 0 1 
+
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+4	4
+16	32	16
+64	192	192	64
+256	1024	1536	1024	256
+-----------------------------------	rank(P[j]) = 	3	3	3	3	
+k0	k1	k2	k3	k4
+1	1
+1	2	1
+1	3	3	1
+1	4	6	4	1
+-----------------------------------parameters of P:
+row	col	kappa,delta,kappa_tilde,delta_tilde
+4	4	1	3	1	2	
+4	4	1	3	1	4	
+4	4	1	3	1	4	
+4	4	1	1	1	3	
+-----------------------------------
+d0	d1	d2	d3	d4	d(left)
+1	3	
+1	3	9	
+1	3	9	27	
+1	1	3	9	27	
+d0	d1	d2	d3	d4	d(right)
+2	1	
+8	2	1	
+32	8	2	1	
+96	24	6	2	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+                                                     n= 16	32	16
+                                                                                           k= 2	
+d_left=	3	
+                          d_right=2	
+                                                     n= 64	192	192	64
+                                                                                           k= 3	3	
+d_left=	3	9	
+                          d_right=8	2	
+                                                     n= 256	1024	1536	1024	256
+                                                                                           k= 4	6	4	
+d_left=	1	3	9	
+                          d_right=24	6	2	
+Elapsed time = 78.373 seconds

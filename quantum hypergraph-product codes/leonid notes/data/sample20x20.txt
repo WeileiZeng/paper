@@ -1,0 +1,1305 @@
+********************************************************* result110-10.log
+condition satidfied when j = 5170
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-10-P1.mm
+condition satidfied when j = 13650
+wrote the matrix (density:0.1775) into file data/random/pool/trail110-10-P2.mm
+condition satidfied when j = 4135
+wrote the matrix (density:0.195) into file data/random/pool/trail110-10-P3.mm
+condition satidfied when j = 38222
+wrote the matrix (density:0.21) into file data/random/pool/trail110-10-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+18	54	54	18	
+36	144	216	144	36	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	8	
+20	20	17	3	7	3	7	
+20	20	18	2	11	2	11	
+20	20	18	2	11	2	11	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	539	
+1	7	49	539	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+616	56	7	1	
+999	616	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 37.8066 seconds
+********************************************************* result110-11.log
+condition satidfied when j = 10162
+wrote the matrix (density:0.2175) into file data/random/pool/trail110-11-P1.mm
+condition satidfied when j = 3736
+wrote the matrix (density:0.2) into file data/random/pool/trail110-11-P2.mm
+condition satidfied when j = 7814
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-11-P3.mm
+condition satidfied when j = 2138
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-11-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+2	2	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	8	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	11	
+1	7	77	
+1	7	49	539	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+11	1	
+88	8	1	
+616	56	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 14.5431 seconds
+********************************************************* result110-12.log
+condition satidfied when j = 25712
+wrote the matrix (density:0.1775) into file data/random/pool/trail110-12-P1.mm
+condition satidfied when j = 14551
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-12-P2.mm
+condition satidfied when j = 131
+wrote the matrix (density:0.1825) into file data/random/pool/trail110-12-P3.mm
+condition satidfied when j = 5933
+wrote the matrix (density:0.2) into file data/random/pool/trail110-12-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	343	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+49	7	1	
+343	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 28.5449 seconds
+********************************************************* result110-13.log
+condition satidfied when j = 19568
+wrote the matrix (density:0.1825) into file data/random/pool/trail110-13-P1.mm
+condition satidfied when j = 7863
+wrote the matrix (density:0.195) into file data/random/pool/trail110-13-P2.mm
+condition satidfied when j = 27661
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-13-P3.mm
+condition satidfied when j = 7689
+wrote the matrix (density:0.18) into file data/random/pool/trail110-13-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	8	
+20	20	17	3	9	3	7	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	63	
+1	7	49	441	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+392	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 36.6978 seconds
+********************************************************* result110-14.log
+condition satidfied when j = 4895
+wrote the matrix (density:0.185) into file data/random/pool/trail110-14-P1.mm
+condition satidfied when j = 1248
+wrote the matrix (density:0.195) into file data/random/pool/trail110-14-P2.mm
+condition satidfied when j = 18785
+wrote the matrix (density:0.195) into file data/random/pool/trail110-14-P3.mm
+condition satidfied when j = 6790
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-14-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	8	
+20	20	17	3	7	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	88	
+1	7	56	616	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+77	7	1	
+616	56	7	1	
+999	448	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 18.5535 seconds
+********************************************************* result110-15.log
+condition satidfied when j = 17006
+wrote the matrix (density:0.19) into file data/random/pool/trail110-15-P1.mm
+condition satidfied when j = 624
+wrote the matrix (density:0.2175) into file data/random/pool/trail110-15-P2.mm
+condition satidfied when j = 13272
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-15-P3.mm
+condition satidfied when j = 15726
+wrote the matrix (density:0.2175) into file data/random/pool/trail110-15-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	539	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+49	7	1	
+539	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 30.2032 seconds
+********************************************************* result110-16.log
+condition satidfied when j = 23885
+wrote the matrix (density:0.215) into file data/random/pool/trail110-16-P1.mm
+condition satidfied when j = 13468
+wrote the matrix (density:0.2275) into file data/random/pool/trail110-16-P2.mm
+condition satidfied when j = 1090
+wrote the matrix (density:0.16) into file data/random/pool/trail110-16-P3.mm
+condition satidfied when j = 5343
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-16-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+2	2	
+6	12	6	
+18	54	54	18	
+36	144	216	144	36	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	9	
+20	20	17	3	7	3	7	
+20	20	18	2	11	2	11	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	11	
+1	7	77	
+1	7	49	539	
+1	7	49	539	999	
+d0	d1	d2	d3	d4	d_right
+11	1	
+99	9	1	
+693	63	7	1	
+999	693	63	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 26.8103 seconds
+********************************************************* result110-17.log
+condition satidfied when j = 16738
+wrote the matrix (density:0.2025) into file data/random/pool/trail110-17-P1.mm
+condition satidfied when j = 38973
+wrote the matrix (density:0.2375) into file data/random/pool/trail110-17-P2.mm
+condition satidfied when j = 936
+wrote the matrix (density:0.2125) into file data/random/pool/trail110-17-P3.mm
+condition satidfied when j = 17747
+wrote the matrix (density:0.205) into file data/random/pool/trail110-17-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	7	
+20	20	17	3	8	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	77	
+1	7	49	539	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+77	7	1	
+539	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 41.2044 seconds
+********************************************************* result110-18.log
+condition satidfied when j = 6803
+wrote the matrix (density:0.1775) into file data/random/pool/trail110-18-P1.mm
+condition satidfied when j = 43349
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-18-P2.mm
+condition satidfied when j = 9322
+wrote the matrix (density:0.16) into file data/random/pool/trail110-18-P3.mm
+condition satidfied when j = 5570
+wrote the matrix (density:0.21) into file data/random/pool/trail110-18-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+2	2	
+6	12	6	
+12	36	36	12	
+36	144	216	144	36	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	7	
+20	20	18	2	12	2	11	
+20	20	17	3	8	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	56	7	1	
+d0	d1	d2	d3	d4	d_left
+1	11	
+1	7	77	
+1	7	77	924	
+1	7	56	616	999	
+d0	d1	d2	d3	d4	d_right
+11	1	
+77	7	1	
+847	77	7	1	
+999	616	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 37.994 seconds
+********************************************************* result110-19.log
+condition satidfied when j = 11378
+wrote the matrix (density:0.2125) into file data/random/pool/trail110-19-P1.mm
+condition satidfied when j = 9428
+wrote the matrix (density:0.19) into file data/random/pool/trail110-19-P2.mm
+condition satidfied when j = 7819
+wrote the matrix (density:0.1775) into file data/random/pool/trail110-19-P3.mm
+condition satidfied when j = 1228
+wrote the matrix (density:0.19) into file data/random/pool/trail110-19-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+2	2	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	18	2	11	2	12	
+20	20	17	3	8	3	9	
+20	20	17	3	7	3	7	
+20	20	17	3	9	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	8	1	
+1	7	7	1	
+1	7	56	7	1	
+d0	d1	d2	d3	d4	d_left
+1	11	
+1	8	88	
+1	7	56	616	
+1	7	56	504	999	
+d0	d1	d2	d3	d4	d_right
+12	1	
+108	9	1	
+756	63	7	1	
+999	504	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 19.792 seconds
+********************************************************* result110-1.log
+condition satidfied when j = 1855
+wrote the matrix (density:0.18) into file data/random/pool/trail110-1-P1.mm
+condition satidfied when j = 7573
+wrote the matrix (density:0.205) into file data/random/pool/trail110-1-P2.mm
+condition satidfied when j = 13935
+wrote the matrix (density:0.2125) into file data/random/pool/trail110-1-P3.mm
+condition satidfied when j = 22663
+wrote the matrix (density:0.2) into file data/random/pool/trail110-1-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	8	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	8	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	8	64	704	
+1	7	56	448	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+616	56	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 29.4353 seconds
+********************************************************* result110-20.log
+condition satidfied when j = 2427
+wrote the matrix (density:0.2025) into file data/random/pool/trail110-20-P1.mm
+condition satidfied when j = 38346
+wrote the matrix (density:0.175) into file data/random/pool/trail110-20-P2.mm
+condition satidfied when j = 20564
+wrote the matrix (density:0.195) into file data/random/pool/trail110-20-P3.mm
+condition satidfied when j = 2801
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-20-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	8	3	7	
+20	20	17	3	8	3	7	
+20	20	17	3	9	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	8	7	1	
+1	8	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	8	64	512	
+1	8	64	512	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+392	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 31.2047 seconds
+********************************************************* result110-21.log
+condition satidfied when j = 8745
+wrote the matrix (density:0.2025) into file data/random/pool/trail110-21-P1.mm
+condition satidfied when j = 2662
+wrote the matrix (density:0.195) into file data/random/pool/trail110-21-P2.mm
+condition satidfied when j = 16098
+wrote the matrix (density:0.2025) into file data/random/pool/trail110-21-P3.mm
+condition satidfied when j = 5708
+wrote the matrix (density:0.1675) into file data/random/pool/trail110-21-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	7	
+20	20	17	3	8	3	8	
+20	20	17	3	7	3	7	
+20	20	18	2	11	2	11	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	56	
+1	7	49	392	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+56	7	1	
+392	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 19.4819 seconds
+********************************************************* result110-22.log
+condition satidfied when j = 4828
+wrote the matrix (density:0.2025) into file data/random/pool/trail110-22-P1.mm
+condition satidfied when j = 13877
+wrote the matrix (density:0.185) into file data/random/pool/trail110-22-P2.mm
+condition satidfied when j = 11549
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-22-P3.mm
+condition satidfied when j = 787
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-22-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	7	3	9	
+20	20	17	3	7	3	7	
+20	20	17	3	8	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	7	56	
+1	7	49	392	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+72	8	1	
+504	56	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 18.3719 seconds
+********************************************************* result110-23.log
+condition satidfied when j = 13524
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-23-P1.mm
+condition satidfied when j = 29167
+wrote the matrix (density:0.205) into file data/random/pool/trail110-23-P2.mm
+condition satidfied when j = 217
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-23-P3.mm
+condition satidfied when j = 8957
+wrote the matrix (density:0.2) into file data/random/pool/trail110-23-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	8	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	88	
+1	8	64	704	
+1	7	56	448	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+77	7	1	
+539	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 24.0587 seconds
+********************************************************* result110-24.log
+condition satidfied when j = 3847
+wrote the matrix (density:0.18) into file data/random/pool/trail110-24-P1.mm
+condition satidfied when j = 10633
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-24-P2.mm
+condition satidfied when j = 20763
+wrote the matrix (density:0.22) into file data/random/pool/trail110-24-P3.mm
+condition satidfied when j = 1412
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-24-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	7	3	8	
+20	20	17	3	8	3	9	
+20	20	18	2	11	2	11	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	8	1	
+1	7	56	8	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	7	56	
+1	7	56	448	
+1	7	56	448	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+64	8	1	
+576	64	8	1	
+999	576	64	8	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 17.5595 seconds
+********************************************************* result110-25.log
+condition satidfied when j = 22975
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-25-P1.mm
+condition satidfied when j = 20709
+wrote the matrix (density:0.205) into file data/random/pool/trail110-25-P2.mm
+condition satidfied when j = 5933
+wrote the matrix (density:0.22) into file data/random/pool/trail110-25-P3.mm
+condition satidfied when j = 33995
+wrote the matrix (density:0.19) into file data/random/pool/trail110-25-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	9	
+20	20	17	3	8	3	9	
+20	20	17	3	7	3	8	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	8	1	
+1	7	8	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	7	56	448	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+9	1	
+81	9	1	
+648	72	8	1	
+999	504	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 30.4942 seconds
+********************************************************* result110-26.log
+condition satidfied when j = 40905
+wrote the matrix (density:0.1725) into file data/random/pool/trail110-26-P1.mm
+condition satidfied when j = 7694
+wrote the matrix (density:0.22) into file data/random/pool/trail110-26-P2.mm
+condition satidfied when j = 4744
+wrote the matrix (density:0.21) into file data/random/pool/trail110-26-P3.mm
+condition satidfied when j = 35560
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-26-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	9	
+20	20	17	3	8	3	9	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	56	
+1	7	49	392	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+9	1	
+81	9	1	
+567	63	7	1	
+999	441	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 30.5473 seconds
+********************************************************* result110-27.log
+condition satidfied when j = 20231
+wrote the matrix (density:0.2125) into file data/random/pool/trail110-27-P1.mm
+condition satidfied when j = 16709
+wrote the matrix (density:0.19) into file data/random/pool/trail110-27-P2.mm
+condition satidfied when j = 3166
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-27-P3.mm
+condition satidfied when j = 5230
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-27-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	7	
+20	20	17	3	8	3	7	
+20	20	17	3	8	3	9	
+20	20	17	3	8	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	8	7	1	
+1	8	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	8	64	512	
+1	8	64	512	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+49	7	1	
+441	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 17.509 seconds
+********************************************************* result110-28.log
+condition satidfied when j = 311
+wrote the matrix (density:0.2125) into file data/random/pool/trail110-28-P1.mm
+condition satidfied when j = 432
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-28-P2.mm
+condition satidfied when j = 1905
+wrote the matrix (density:0.2175) into file data/random/pool/trail110-28-P3.mm
+condition satidfied when j = 6966
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-28-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	9	3	7	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	72	
+1	7	56	504	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+392	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 5.22041 seconds
+********************************************************* result110-29.log
+condition satidfied when j = 593
+wrote the matrix (density:0.2) into file data/random/pool/trail110-29-P1.mm
+condition satidfied when j = 11125
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-29-P2.mm
+condition satidfied when j = 1142
+wrote the matrix (density:0.2) into file data/random/pool/trail110-29-P3.mm
+condition satidfied when j = 2068
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-29-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	8	
+20	20	17	3	7	3	7	
+20	20	17	3	8	3	10	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	392	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+560	56	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 8.38573 seconds
+********************************************************* result110-2.log
+condition satidfied when j = 8461
+wrote the matrix (density:0.19) into file data/random/pool/trail110-2-P1.mm
+condition satidfied when j = 20635
+wrote the matrix (density:0.185) into file data/random/pool/trail110-2-P2.mm
+condition satidfied when j = 8994
+wrote the matrix (density:0.18) into file data/random/pool/trail110-2-P3.mm
+condition satidfied when j = 15005
+wrote the matrix (density:0.1775) into file data/random/pool/trail110-2-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	9	3	8	
+20	20	17	3	7	3	8	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	9	
+1	7	63	
+1	7	56	504	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+64	8	1	
+448	56	7	1	
+999	448	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 31.5208 seconds
+********************************************************* result110-3.log
+condition satidfied when j = 3513
+wrote the matrix (density:0.2175) into file data/random/pool/trail110-3-P1.mm
+condition satidfied when j = 1516
+wrote the matrix (density:0.1825) into file data/random/pool/trail110-3-P2.mm
+condition satidfied when j = 10102
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-3-P3.mm
+condition satidfied when j = 181
+wrote the matrix (density:0.21) into file data/random/pool/trail110-3-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	7	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	8	
+20	20	17	3	8	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	7	56	448	
+1	7	56	448	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+49	7	1	
+392	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 9.06938 seconds
+********************************************************* result110-4.log
+condition satidfied when j = 16020
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-4-P1.mm
+condition satidfied when j = 7971
+wrote the matrix (density:0.165) into file data/random/pool/trail110-4-P2.mm
+condition satidfied when j = 9188
+wrote the matrix (density:0.215) into file data/random/pool/trail110-4-P3.mm
+condition satidfied when j = 13312
+wrote the matrix (density:0.23) into file data/random/pool/trail110-4-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	17	3	7	3	7	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	7	56	
+1	7	56	448	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+56	7	1	
+392	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 27.1609 seconds
+********************************************************* result110-5.log
+condition satidfied when j = 14549
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-5-P1.mm
+condition satidfied when j = 14153
+wrote the matrix (density:0.21) into file data/random/pool/trail110-5-P2.mm
+condition satidfied when j = 236
+wrote the matrix (density:0.21) into file data/random/pool/trail110-5-P3.mm
+condition satidfied when j = 6932
+wrote the matrix (density:0.1975) into file data/random/pool/trail110-5-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	10	
+20	20	17	3	7	3	8	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	8	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	392	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+10	1	
+80	8	1	
+560	56	7	1	
+999	448	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 23.0075 seconds
+********************************************************* result110-6.log
+condition satidfied when j = 19200
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-6-P1.mm
+condition satidfied when j = 8712
+wrote the matrix (density:0.18) into file data/random/pool/trail110-6-P2.mm
+condition satidfied when j = 3472
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-6-P3.mm
+condition satidfied when j = 4642
+wrote the matrix (density:0.195) into file data/random/pool/trail110-6-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+81	324	486	324	81	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	10	
+20	20	17	3	8	3	7	
+20	20	17	3	7	3	9	
+20	20	17	3	8	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	64	
+1	7	56	448	
+1	7	56	448	999	
+d0	d1	d2	d3	d4	d_right
+10	1	
+70	7	1	
+630	63	7	1	
+999	441	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 21.4062 seconds
+********************************************************* result110-7.log
+condition satidfied when j = 1453
+wrote the matrix (density:0.185) into file data/random/pool/trail110-7-P1.mm
+condition satidfied when j = 901
+wrote the matrix (density:0.215) into file data/random/pool/trail110-7-P2.mm
+condition satidfied when j = 18344
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-7-P3.mm
+condition satidfied when j = 20980
+wrote the matrix (density:0.235) into file data/random/pool/trail110-7-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	7	
+20	20	18	2	11	2	11	
+20	20	17	3	9	3	7	
+20	20	17	3	8	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	8	7	1	
+1	8	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	88	
+1	8	72	792	
+1	8	64	576	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+77	7	1	
+539	49	7	1	
+999	343	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 25.9159 seconds
+********************************************************* result110-8.log
+condition satidfied when j = 14352
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-8-P1.mm
+condition satidfied when j = 23248
+wrote the matrix (density:0.2075) into file data/random/pool/trail110-8-P2.mm
+condition satidfied when j = 12279
+wrote the matrix (density:0.215) into file data/random/pool/trail110-8-P3.mm
+condition satidfied when j = 12038
+wrote the matrix (density:0.1925) into file data/random/pool/trail110-8-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+6	12	6	
+18	54	54	18	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	8	3	8	
+20	20	18	2	11	2	11	
+20	20	17	3	7	3	9	
+20	20	17	3	7	3	7	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	8	1	
+1	7	8	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	8	
+1	8	88	
+1	7	56	616	
+1	7	49	392	999	
+d0	d1	d2	d3	d4	d_right
+8	1	
+88	8	1	
+792	72	8	1	
+999	504	56	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 37.3251 seconds
+********************************************************* result110-9.log
+condition satidfied when j = 8090
+wrote the matrix (density:0.1875) into file data/random/pool/trail110-9-P1.mm
+condition satidfied when j = 6231
+wrote the matrix (density:0.18) into file data/random/pool/trail110-9-P2.mm
+condition satidfied when j = 3850
+wrote the matrix (density:0.19) into file data/random/pool/trail110-9-P3.mm
+condition satidfied when j = 2535
+wrote the matrix (density:0.185) into file data/random/pool/trail110-9-P4.mm
+#Expected value calculated from Table 1:
+n0	n1	n2	n3	n4
+20	20	
+400	800	400	
+8000	24000	24000	8000	
+160000	640000	960000	640000	160000	
+-----------------------------------
+k0	k1	k2	k3	k4
+3	3	
+9	18	9	
+27	81	81	27	
+54	216	324	216	54	
+-----------------------------------parameters of P:
+row	col	rank	kappa,delta,kappa_tilde,delta_tilde
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	7	
+20	20	17	3	7	3	8	
+20	20	18	2	12	2	11	
+-----------------------------------
+d0	d1	d2	d3	d4	d_min=min(d_left,d_right)
+1	1	
+1	7	1	
+1	7	7	1	
+1	7	49	7	1	
+d0	d1	d2	d3	d4	d_left
+1	7	
+1	7	49	
+1	7	49	343	
+1	7	49	343	999	
+d0	d1	d2	d3	d4	d_right
+7	1	
+49	7	1	
+392	49	7	1	
+999	392	49	7	1	
+# Numerical results on [n,k,d] value of code Q (Aj,A(j+1)^T)
+Elapsed time = 13.3833 seconds

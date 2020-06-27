@@ -1,0 +1,264 @@
+%this is a note send to Alexei on Aug, 21, 2018
+\def\rank{\mathop{\rm rank}}
+\def\wgt{\mathop{\rm wgt}}
+\def\lc{\mathop{\rm lc}}
+\documentclass[aps,prb,12pt,tightenlines,%
+notitlepage,longbibliography]{revtex4-1}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+%\advance\textheight by -3.2in
+\begin{document}
+\title{Higher-dimensional hypergraph-product codes}
+\date{August 15, 2018} 
+%\author{Leonid P.\ Pryadko}
+%\address{UCR}
+%\author{Weilei Zeng}
+%\address{UCR}
+\begin{abstract}
+ This work discuss the definition of the distance of data syndrome code. It can also be derived from the column weight of the quantum code. Several examples are given. More applications to the hypergaph product codes and convolutional code need to be done.
+\end{abstract}
+\maketitle
+
+
+\section{lower bound on distance of Data syndrome code}
+From a quantum code with redundant parity check matrix $G_{n_1 \times n_2}$, we define the data syndrome code as $Q=( G|E_{n_1} )$. There exists full rank matrix $T_{\kappa \times n_1}$ such that $TG=0$. $T$ is the parity check matrix for the classical syndrome code. Then the generating matrix for syndrome code is $F$ such that $TF^T=0$. One can see $F$ is just the full rank matrix of $G^T$. Then the minimum row weight of $F$ is just the minimum weight of $G^T$, which is the distance of the syndrome code $d_s$. Then $[n_1,k,d_s]$ is the parameters of syndrome code with parity check matrix $T$. $k=n_1-\kappa$ is the rank of $G$.
+
+To avoid confusion in my notation, the data syndrome code means one decode qubit error and syndrome error globally/simultaneously. If one decode syndrome error first, and then use the decoded syndrome to decode the qubit error,  the syndrome part is called syndrome code, and the qubit part is the original quantum code.
+
+\begin{theorem}
+ (1) If the quantum code has distance $d_q$, and the syndrome code has distance $d_s$, then the overall code (decode syndrome error first and then qubit error) would have distance \framebox{$d=\min(d_q,d_s)$}.
+
+(2) If we decode the qubit error and syndrome error simultaneously, the data syndrome code would have distance 
+\framebox{ $d_{ds}=\min \wgt\left( (E_{n_2}|G^T) \setminus (H|0)   \right)\ge \min(d_q,1+d_s)$}, where $H$ is the other parity check matrix.
+\end{theorem}
+\begin{proof}
+ Part (1) looks obvious. 
+
+For part (2), the dual matrix of $Q=( G|E_{n_1} )$ is $(E_{n_2}|G^T)$. We can transform it into $ \left( \begin{array}{cc} H & 0 \\ C & 0\\ A &B \end{array} \right)$, where $GH^T=0$, $GC^T =0$, $H$ is the other parity check matrix, $C$ is the codeword generating matrix, $A$ and $B$ are full rank matrices, which refer to detectable qubit errors and corresponding syndrome in the original quantum code. The distance of the data syndrome code is the minimum row weight of $(H|0)$ 's coset in $ \left( \begin{array}{cc}  C & 0\\ A &B \end{array} \right)$. We can write the matrix as $ (E|G^T) \setminus (H|0)   $. 
+Use $\min \wgt (C|0)=\min \wgt (C)=d_q$ and
+$$\min \wgt (A|B) = \min \wgt \left( (E|G^T) 
+\setminus \left( \begin{array}{cc} H & 0 \\ C & 0 \end{array} \right) \right)
+\ge 1+ \min \wgt (G^T) =1+d_s$$
+The we have the following lower bound
+$$d_{ds} =\min \left(   d_q, \min \wgt (A|B)  \right)
+\ge \min(d_q,1+d_s)$$
+\end{proof}
+Example: For the cubic code with side length $L$, the $G_X$ with plaquette check operators has $d_q=L^2$ and $d_s=4$. In part (1), it will lower the overall distance to 4. In part (2), the distance becomes 5. Both match the lower bounds exactly. And both become very weak, compared to the quantum code distance.
+Then this kind of code only apply to the case where measurement error probability are much lower than quantum error probability.
+
+For the $(A|B)$ part, we consider it as bad/logical errors. But the measurement error will disappear in the next round and then the qubit error can get detected. Then $d_{ds}$ would be higher than the lower bound especially when $d_q \gg d_s$.
+
+Then we can get a better lower bound by looking at the row weight distribution of $(E|G^T)$
+
+\begin{definition}[robustness] 
+define $g(x)$ as the min weight of error $e_q$ $s.t.$ $|\sigma (e_q) |$ = x. We call it robustness. Then 
+$\min \wgt \left( (E|G^T) 
+\setminus \left( \begin{array}{cc} H & 0 \\ C & 0 \end{array} \right) \right)
+=\min_x (x+g(x))=d_r$, \framebox{ $d_{ds}=\min ( d_q,d_r)$}
+\end{definition}
+In order to get large distance, we want $g(x)$ to be large. Also, we prefer $g(x)$ to have an inverse relation with $x$, such as $g(x)=d_q-x$.
+\textbf{ This gives a standard to choose a set of parity check generators, that maximize the distance of the data syndrome code.} Fujiwara \cite{fujiwara2014ability} gives several examples of this. Increasing robustness $g(x)$ is the generalization of those examples, and is a special method to increase the column weight of $G$. I believe we can design an optimization algorithm by calculating the row weight distribution of $G^T$, to make the code have best distance. The output would be a transformation matrix for the rows of $G$.
+
+As for the $soundness$ defined by Earl, he wants make $g(x)$ as small as possible, to avoid large weight residual errors resulted from measurement error. This applies in the case that one decode syndrome error first and then qubit error. This reduces the decoding complexity.
+
+But If we do a global decoding for syndrome error and qubit error together, It is not necessary to have good soundness. Conversely, large minimum weight are prefered to increase the distance.
+
+As Earl suggested, if the residual error has weight $\wgt(e_{res})<d_q/2$, we consider it as a good error, which can hopefully get fixed in the next round. Then we can have a modified definition of the robustness, which increases the lower bound compare to the previous definition.
+
+\begin{definition}[modified robustness] 
+define $g'(x)$ as the min weight of error $e_q$ $s.t.$ $|\sigma (e_q) |$ = x and $\wgt(e_q) \ge d_q/2$. If such error doesn't exist, then $g(x)=\infty$.
+Then 
+$\min \wgt \left( (E|G^T) 
+\setminus \left( \begin{array}{cc} H & 0 \\ C & 0 \end{array} \right) \right)
+=\min_x (x+g'(x))=d'_r \ge 1+d_q/2$, $d_{ds}=\min ( d_q,d'_r) \ge 1+d_q/2$
+\end{definition}
+This modified robustness can change the story of this work, and is out of my mind right now. In my imagination, the good soundness is related to a case that, for some $t$, $g'(x)=\infty, \forall x \le t$
+
+\section{Generalization to non CSS code}
+This section generalizes the robustness theory to non CSS code, and show an example of optimizing the $[[7,1,3]]$ CSS code.
+For a general code with parity check matrix $G=(G_X|G_Z)$, $\tilde G G^T=0$. $C$ is the codeword generating matrix $\tilde G C^T=0$. Define the data syndrome code as $D=(G_X|G_Z|E)$. An error $e=(e_X|e_Z|e_s)$ is a codeword iff $D(e_Z|e_X|e_s)^T=0$. The dual matrix of $D$ is  
+$J=\left( \begin{array}{cc} E & \begin{minipage}[c]{0.22in} $G_X^T$\\$G_Z^T$ \end{minipage}  \end{array} \right) $. 
+The codeword generating matrix of $D$ is $J \setminus \left( \begin{array}{ccc}C_X & C_Z & 0 \\ G_X & G_Z & 0 \end{array} \right)$. Usually, the row weight (supposition of $X$ and $Z$ error on a qubit is a $Y$ error of weight 1) of the codeword generating matrix give the distance of the code. However, other than X and Z error, we also need to consider Y errors. In this matrix, an X error and Z error on the same qubits will have weight two, but it is actually an Y error of weight one.
+To avoid this, the matrix used to determine the distance becomes 
+$\left( \begin{array}{cc} E & \begin{minipage}[c]{0.22in} $G_X^T$\\$G_Z^T$\\$G_Y^T$ \end{minipage}  \end{array} \right) 
+ \setminus \left( \begin{array}{cccc}C_X & C_Z & C_Y &0 \\ G_X & G_Z & G_Y&0 \end{array} \right)$. In CSS code, the Y part could be eliminated casue its weight is always larger than the X or Z part. I didn't show Y part in the examples, but it should be checked and was checked by hand.
+
+
+
+Fujiwara modify the $[[7,1,3]]$ CSS code to make it a non CSS code which can fix single measurement error\cite{fujiwara2014ability} . The parameters of the quantum code doesn't change. The original CSS code has parity check matrix
+
+$$(G_X|G_Z)=\left(
+\begin{array}{ccccccc|ccccccc}
+1&0&0&1&0&1&1\\
+0&1&0&1&1&0&1\\
+0&0&1&0&1&1&1\\
+&&&&&&&1&0&0&1&0&1&1\\
+&&&&&&&0&1&0&1&1&0&1\\
+&&&&&&&0&0&1&0&1&1&1\\
+\end{array}
+\right)$$
+Transpose of the dual matrix is
+$$
+\left( \begin{array}{cc} E & \begin{minipage}[c]{0.22in} $G_X^T$\\$G_Z^T$ \end{minipage}  \end{array} \right) ^T=
+\left(
+\begin{array}{ccccccc|ccccccc}
+1&0&0&1&0&1&1\\
+0&1&0&1&1&0&1\\
+0&0&1&0&1&1&1\\
+&&&&&&&1&0&0&1&0&1&1\\
+&&&&&&&0&1&0&1&1&0&1\\
+&&&&&&&0&0&1&0&1&1&1\\\hline
+1&&&&&&&\\
+&1&&&&&&&\\
+&&1&&&&&&&\\
+&&&1&&&&&&&\\
+&&&&1&&&&&&&\\
+&&&&&1&&&&&&&\\
+&&&&&&1&&&&&&&\\\hline
+&&&&&&&1\\
+&&&&&&&&1\\
+&&&&&&&&&1\\
+&&&&&&&&&&1\\
+&&&&&&&&&&&1\\
+&&&&&&&&&&&&1\\
+&&&&&&&&&&&&&1\\
+\end{array}
+\right)$$
+Eliminating the parity check operators, the min column weight is 2. Then the distance of the syndrome code is $d=2$. It is not able to fix single measurement error.
+
+Fujiwara apply the recombination of parity check operators, the paritycheck matrix becomes
+$$(G'_X|G'_Z)=\left(
+\begin{array}{ccccccc|ccccccc}
+1&0&0&1&0&1&1 &1&0&0&1&0&1&1\\
+0&1&0&1&1&0&1 &1&0&0&1&0&1&1\\
+0&0&1&0&1&1&1 &1&0&0&1&0&1&1\\
+1&1&1&0&0&0&1 &0&1&1&1&0&1&0\\
+1&1&1&0&0&0&1 &1&0&1&1&1&0&0\\
+1&1&1&0&0&0&1 &1&1&0&0&1&1&0\\
+\end{array}
+\right)$$
+Then the transpose of its dual becomes
+$$
+\left( \begin{array}{cc} E & \begin{minipage}[c]{0.22in} $G'^T_X$\\$G'^T_Z$ \end{minipage}  \end{array} \right) ^T=
+\left(
+\begin{array}{ccccccc|ccccccc}
+1&0&0&1&0&1&1 &1&0&0&1&0&1&1\\
+0&1&0&1&1&0&1 &1&0&0&1&0&1&1\\
+0&0&1&0&1&1&1 &1&0&0&1&0&1&1\\
+1&1&1&0&0&0&1 &0&1&1&1&0&1&0\\
+1&1&1&0&0&0&1 &1&0&1&1&1&0&0\\
+1&1&1&0&0&0&1 &1&1&0&0&1&1&0\\\hline
+1&&&&&&&\\
+&1&&&&&&&\\
+&&1&&&&&&&\\
+&&&1&&&&&&&\\
+&&&&1&&&&&&&\\
+&&&&&1&&&&&&&\\
+&&&&&&1&&&&&&&\\\hline
+&&&&&&&1\\
+&&&&&&&&1\\
+&&&&&&&&&1\\
+&&&&&&&&&&1\\
+&&&&&&&&&&&1\\
+&&&&&&&&&&&&1\\
+&&&&&&&&&&&&&1\\
+\end{array}
+\right)$$
+Eliminating the parity check operators, the min column weight is 3. Then the distance of the syndrome code is $d=3$. It is able to fix all single measurement error.
+
+To see the change from the view of robustness, lets calculate it for both codes.
+
+For the original CSS code, the first 3 columns show there exists a single qubit error for that syndrome bit. So $g(1)=1$.  The column 4 show that we get a single qubit error corresponding to 2 syndrome bit, then $g(2)=1$, etc. Then $d=1+g(1)=2$. 
+
+For the modified code, adding column 1, 2, 7, we got $g'(1)=3$. The column 4 shows $g'(1)=2$. Column 4 and column 5 show that $g'(2)=1$, etc. Then $d'=1+g'(1)=2+g'(2)=3$.
+
+Fujiwara optimize the code in a way that all single errors (both qubit and syndrome bit) has unique syndrome result. In our language, we are improving the robustness $\min_x (x+g(x)$ from 2 to 3. When designing program, this could be achieved by applying random/particular transform matrix on $G$ and evaluate the robustness. I think there is a way to design such transform matrix, in order to eliminate those columns that give the minimum value of $(x+g(x))$
+
+
+\section{Examples: Repetition code and 2D toric code}
+For the 1D repetition code without redundancy, the parity check matrix is
+$\hat a=\left( \begin{array}{ccccc}1 & 1 \\  & 1 & 1 & \\ &&1 &1\\ &&&1&1\end{array} \right)$, the first and last column gives $g(1)=1$, and other columns give $g(2)=1$, which implement $d_{ds}=\min_x(x+g(x))=2$. If we add one redundancy to make it the circulant repetition matrix $a=\left( \begin{array}{ccccc}1 & 1 \\  & 1 & 1 & \\ &&1 &1\\ &&&1&1\\ 1 &&&&1\end{array} \right)$, then we still have $g(2)=1$, but $g(1)=\infty$. Now $d_{ds}=3$.
+
+Similarly, for the 2D toric code without redundancy, for most single qubit error, there are two plaquettes connected, then $g(2)=1$. But for the one plaquette removed by redundancy, the single qubit error on one of the bonds of that plaquette is connected with only one plaquette. Then $g(1)=1$. Hence $d_{ds}=2$. But if we add that removed plaquette, then all single error are connected with two plaquettes. Then $g(2)=1$, $g(1)=\infty$, and $d_{ds}=3$. Same conclusion applied to the reduandancy in toric codes in higher dimension.
+
+In these two cases, we add extra checks to increase $d_{ds}$. But in some cases, we only need to do recombination of checks. For example
+$a'=\left( \begin{array}{ccccc}1 & 1 \\  & 1 & 1 & \\ &1& &1\\ &&&1&1\\ 1 &&&&1\end{array} \right)$, where I add row 2 and row 3 in the circulant repetition matrix $a$. Column 3 in $a'$ shows $g(1)=1$ and $d_{ds}=2$. By converting it back to code $a$, the distance get improved.
+
+\textbf{These examples show that, if a data syndrome code has only a small number of codewords that have weight matches $d_{ds}$, then we may eliminate those codewords and increase $d_{ds}$, by paying a small cost on increasing redundancy of parity checks and/or weight of parity checks. This case maybe popular when we construct hypergraph product code from random matrices. Another advantage for the hypergraph product code is that its row weight is bounded}
+
+For the 2D toric code with redundancy that have $d_{ds}=3$, since all single qubit error connected with two plaquette match this minimum weight, it is much harder to increase $d_{ds}$. Lets try an example. Let\\
+$b=a^T=\left( \begin{array}{ccccc} 1&&&&1 \\1 & 1 \\  & 1 & 1 & \\ &&1 &1\\ &&&1&1 \\\end{array} \right)$, 
+$T=\left( \begin{array}{ccccc} 1 & 1 \\  & 1 & 1 & \\ &&1 &1\\ &&&1&1 \\ 1&&&&1 \\1\end{array} \right)$.\\
+The 2D toric code with one redundancy is defined as 
+$G=(a \otimes E |e \otimes b) $.
+Then define a new code
+$G'=\left( \begin{array}{c} (T \otimes E) G \\ (E \otimes T) G\end{array}\right)  $, where we combine any two adjacent plaquettes to form a rectangular check operator. The top matrix means horizontal rectangles, and the bottom matrix means vertical rectangles. (The last row in $T$ ensures that we are not changing the quantum code) Now, each single bond is connected to 6 rectangle, $g(6)=1$. Each two bonds could connect to 8 rectangles, $g(8)=2$. Then $d_{ds}=7$. Here we double the number of parity checks. 
+As a comparison, if we just repeat the measurement twice, then a single qubit error will be connected to 4 plaquettes. Hence $g(4)=1$ and $d_{ds}=5$.
+
+Above examples are giving by handy construction or topological graphs. I want to give another example, where we purely look at the weight of the matrix and apply the robustness optimization method. Then we come back to the $[[7,1,3]]$ code. This time we only allow row combination but  don't add extra rows. The column 1, 2, 3 in the parity check matrix has weight 1, which we want to eliminate. By repeating the first three rows, the first three column will have weight 2. But this will leave no room for recombination of the Z operators.
+Hence, we add all pairs of rows in the first three rows, that is, we apply 
+$\left( \begin{array}{ccc} 1\\&1\\&&1\\1&1\\&1&1\\1&&1 \end{array} \right)$ to the first three rows. Then we do the same thing for the last three rows since Z checks and X checks are identical. That is, we apply 
+$T = \left( \begin{array}{ccc|ccc} 1&&&1&1\\&1&&&1&1\\&&1&1&&1\\1&1&&1\\&1&1&&1\\1&&1&&1 \end{array} \right) = \left( \begin{array}{cc} E & a \\a & E \end{array} \right)$ to parity check matrix $(G_X|G_Z)$, and get
+$$T(G_X|G_Z)=\left(
+\begin{array}{ccccccc|ccccccc}
+1&0&0&1&0&1&1 &1&1&0&0&1&1&0\\
+0&1&0&1&1&0&1 &0&1&1&1&0&1&0\\
+0&0&1&0&1&1&1 &1&0&1&1&1&0&0\\
+1&1&0&0&1&1&0 &1&0&0&1&0&1&1\\
+0&1&1&1&0&1&0 &0&1&0&1&1&0&1\\
+1&0&1&1&1&0&0 &0&0&1&0&1&1&1\\
+\end{array}
+\right)$$
+Now min column weight is 3. we also need to check Y part
+$$G_Y=G_x+G_Z=\left(\begin{array}{ccccccc}
+0&1&0&1&1&0&1\\
+0&0&1&0&1&1&1\\
+1&0&0&1&0&1&1\\
+0&1&0&1&1&0&1\\
+0&0&1&0&1&1&1\\
+1&0&0&1&0&1&1\\
+\end{array}\right)$$
+The min column weight is 2. Then $g(2)=1$, $d_{ds} =3$, it is a single error correction code.
+
+Above examples are based on robustness. If we consider the modified robustness, things will become quite different: we are changing the definition of distance of data syndrome code. First, the distance of cubic code is not 5 anymore, cause we can ignore codeword involved with single qubit error.
+
+\section{Upper bound on distance of data syndrome code}
+In Fujiwara's paper, he optimize a data syndrome code to be robust against single error, by ensuring each single error has a unique syndrome. He also appply the same technique for double error correction codes. from this, I can give an upper bound on the distance of data syndrome code.
+\begin{theorem}
+For a data syndrome code with $n$ qubits and $m$ number of parity checks. In order to correct all single error, including X,Y, Z qubit error and syndrome bit error. the following relation should be satisfied
+$3\left( \begin{array}{c} n\\1 \end{array} \right)+m \le 2^m$
+\end{theorem}
+\begin{proof}
+This is the necessary condition that each single error has a unique syndrome.
+\end{proof}
+\begin{theorem}
+For a data syndrome code with $n$ qubits and $m$ number of parity checks. In order to correct all error $e$, $s.t.$ $\wgt{e}\le t$, including X,Y, Z qubit error and syndrome bit error. the following relation should be satisfied
+$\displaystyle \sum_{i=1}^t  \sum_{j=0}^i 3^j\left( \begin{array}{c} n\\j \end{array} \right) \times \left( \begin{array}{c} m\\i-j \end{array} \right)  \le 2^m$
+\end{theorem}
+\begin{proof}
+This is the necessary condition that all such errors has a unique syndrome.
+\end{proof}
+This upper bound shows that, for some code, it is unable to improve $d_{ds}$ without adding new redundant checks. An example is the case of perfect five qubit code in Fujiwara's paper. An extra check has to be added to make it robust against all single error.
+These two bounds may be equivalent to the theorem in Fujiwara's paper on single error correction codes and double error correction codes.
+
+\section{discussion}
+After we have these upper and lower bound, and the robustness theory, we can apply it to hypergraph product code and also, the quantum convolutional code design with Alexei Ashikmin. Notice for the hypergraph product codes, if we want to bound its weight, then we can only apply transformation of small matrices $P_i$ other than the whole parity check matrix.
+
+The numerical method to evaluate robustness is simple, just estimate weight of all codewords with $x=1,2,...,d_{ds}-1$. But its complexity increase exponentially with $x$. If we want to design code with large distance, optimal evaluation method need to be find. Random window decoder is one of the candidates. To optimize robustness, one can apply random transformation matrix and evaluate robustness. But it is better to find constraints on such transformation matrices. 
+
+As I am trying to maximize the robustness, in Earl's paper he want to minimize similar quantity soundness. I think what he get is small weight check operators and small decoding complexity. And my optimization is good distance.
+
+The last thing is the modified robustness, which may be more realistic for repeating measurement than the robustness.
+
+\bibliography{lpp,qc_all,more_qc,linalg,WeileiBibFile}
+\end{document}
